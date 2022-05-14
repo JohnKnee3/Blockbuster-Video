@@ -5,11 +5,12 @@ db.once("open", async () => {
   await Category.deleteMany();
 
   const categories = await Category.insertMany([
-    { name: "Food" },
-    { name: "Household Supplies" },
-    { name: "Electronics" },
-    { name: "Books" },
-    { name: "Toys" },
+    { name: "Drama" },
+    { name: "Action" },
+    { name: "Comedy" },
+    { name: "Horror" },
+    { name: "Sci-Fi" },
+    { name: "Family" },
   ]);
 
   console.log("categories seeded");
@@ -20,110 +21,146 @@ db.once("open", async () => {
     {
       name: "Pulp Fiction",
       description:
-        "Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.",
+        "The lives of two mob hitmen, a boxer, a gangster and his wife, and a pair of diner bandits intertwine in four tales of violence and redemption.",
       image: "pulp-fiction.jpg",
       category: categories[0]._id,
       price: 44.99,
       quantity: 50,
     },
     {
-      name: "Canned Coffee",
+      name: "No Country for Old Men",
       description:
-        "Praesent sed lacinia mauris. Nulla congue nibh magna, at feugiat nunc scelerisque quis. Donec iaculis rutrum vulputate. Suspendisse lectus sem, vulputate ac lectus sed, placerat consequat dui.",
-      image: "canned-coffee.jpg",
+        "Violence and mayhem ensue after a hunter stumbles upon a drug deal gone wrong and more than two million dollars in cash near the Rio Grande.",
+      image: "no-country-for-old-men.jpg",
       category: categories[0]._id,
-      price: 1.99,
+      price: 29.99,
       quantity: 500,
     },
     {
-      name: "Toilet Paper",
+      name: "Die Hard",
       category: categories[1]._id,
       description:
-        "Donec volutpat erat erat, sit amet gravida justo sodales in. Phasellus tempus euismod urna. Proin ultrices nisi ut ipsum congue, vitae porttitor libero suscipit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aliquam lacinia a nisi non congue.",
-      image: "toilet-paper.jpg",
-      price: 7.99,
+        "An NYPD officer tries to save his wife and several others taken hostage by German terrorists during a Christmas party at the Nakatomi Plaza in Los Angeles.",
+      image: "die-hard.jpg",
+      price: 19.99,
       quantity: 20,
     },
     {
-      name: "Handmade Soap",
+      name: "Fearless",
       category: categories[1]._id,
       description:
-        "Praesent placerat, odio vel euismod venenatis, lectus arcu laoreet felis, et fringilla sapien turpis vestibulum nisl.",
-      image: "soap.jpg",
-      price: 3.99,
+        "A biography of Chinese Martial Arts Master Huo Yuanjia, who is the founder and spiritual guru of the Jin Wu Sports Federation.",
+      image: "fearless.jpg",
+      price: 34.99,
       quantity: 50,
     },
     {
-      name: "Set of Wooden Spoons",
+      name: "Braveheart",
       category: categories[1]._id,
       description:
-        "Vivamus ut turpis in purus pretium mollis. Donec turpis odio, semper vel interdum ut, vulputate at ex. Duis dignissim nisi vel tortor imperdiet finibus. Aenean aliquam sagittis rutrum.",
-      image: "wooden-spoons.jpg",
+        "Scottish warrior William Wallace leads his countrymen in a rebellion to free his homeland from the tyranny of King Edward I of England.",
+      image: "braveheart.jpg",
       price: 14.99,
       quantity: 100,
     },
     {
-      name: "Camera",
+      name: "The Big Lebowski",
       category: categories[2]._id,
       description:
-        "Vestibulum risus metus, luctus non tortor quis, tincidunt consectetur ex. Nullam vitae lobortis ligula, ut sagittis massa. Curabitur consectetur, tellus at pulvinar venenatis, erat augue cursus erat, eu ullamcorper eros lectus ultrices ipsum. Integer rutrum, augue vitae auctor venenatis, turpis turpis elementum orci, at sagittis risus mi a leo.",
-      image: "camera.jpg",
+        "Ultimate L.A. slacker Jeff The Dude Lebowski, mistaken for a millionaire of the same name, seeks restitution for a rug ruined by debt collectors, enlisting his bowling buddies for help while trying to find the millionaire's missing wife.",
+      image: "the-big-lebowski.jpg",
       price: 399.99,
       quantity: 30,
     },
     {
-      name: "Tablet",
+      name: "Meet the Parents",
       category: categories[2]._id,
       description:
-        "In sodales, ipsum quis ultricies porttitor, tellus urna aliquam arcu, eget venenatis purus ligula ut nisi. Fusce ut felis dolor. Mauris justo ante, aliquet non tempus in, tempus ac lorem. Aliquam lacinia dolor eu sem eleifend ultrices. Etiam mattis metus metus. Sed ligula dui, placerat non turpis vitae, suscipit volutpat elit. Phasellus sagittis, diam elementum suscipit fringilla, libero mauris scelerisque ex, ac interdum diam erat non sapien.",
-      image: "tablet.jpg",
-      price: 199.99,
+        "Male nurse Greg Focker meets his girlfriend's parents before proposing, but her suspicious father is every date's worst nightmare.",
+      image: "meet-the-parents.jpg",
+      price: 39.99,
       quantity: 30,
     },
     {
-      name: "Tales at Bedtime",
+      name: "The Ring",
       category: categories[3]._id,
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ornare diam quis eleifend rutrum. Aliquam nulla est, volutpat non enim nec, pharetra gravida augue. Donec vitae dictum neque. Pellentesque arcu lorem, fringilla non ligula ac, tristique bibendum erat. Ut a semper nibh. Quisque a mi et mi tempor ultricies. Maecenas eu ipsum eu enim hendrerit accumsan at euismod urna.",
-      image: "bedtime-book.jpg",
+        "A journalist must investigate a mysterious videotape which seems to cause the death of anyone one week to the day after they view it.",
+      image: "the-ring.jpg",
+      price: 19.99,
+      quantity: 100,
+    },
+    {
+      name: "Scream",
+      category: categories[3]._id,
+      description:
+        "A year after the murder of her mother, a teenage girl is terrorized by a new killer, who targets the girl and her friends by using horror films as part of a deadly game.",
+      image: "scream.jpg",
       price: 9.99,
       quantity: 100,
     },
     {
-      name: "Spinning Top",
+      name: "Aliens",
       category: categories[4]._id,
       description:
-        "Ut vulputate hendrerit nibh, a placerat elit cursus interdum.",
-      image: "spinning-top.jpg",
-      price: 1.99,
-      quantity: 1000,
+        "Fifty-seven years after surviving an apocalyptic attack aboard her space vessel by merciless space creatures, Officer Ripley awakens from hyper-sleep and tries to warn anyone who will listen about the predators.",
+      image: "aliens.jpg",
+      price: 21.99,
+      quantity: 50,
     },
     {
-      name: "Set of Plastic Horses",
+      name: "Everything Everywhere All at Once",
       category: categories[4]._id,
       description:
-        "Sed a mauris condimentum, elementum enim in, rhoncus dui. Phasellus lobortis leo odio, sit amet pharetra turpis porta quis.",
-      image: "plastic-horses.jpg",
-      price: 2.99,
-      quantity: 1000,
+        "An aging Chinese immigrant is swept up in an insane adventure, where she alone can save the world by exploring other universes connecting with the lives she could have led.",
+      image: "everything-everywhere-all-at-once.jpg",
+      price: 29.99,
+      quantity: 40,
     },
     {
-      name: "Teddy Bear",
+      name: "Arrival",
       category: categories[4]._id,
       description:
-        "Vestibulum et erat finibus erat suscipit vulputate sed vitae dui. Ut laoreet tellus sit amet justo bibendum ultrices. Donec vitae felis vestibulum, congue augue eu, finibus turpis.",
-      image: "teddy-bear.jpg",
-      price: 7.99,
-      quantity: 100,
+        "A linguist works with the military to communicate with alien lifeforms after twelve mysterious spacecraft appear around the world.",
+      image: "arrival.jpg",
+      price: 59.99,
+      quantity: 4,
     },
     {
-      name: "Alphabet Blocks",
+      name: "Blade Runner",
       category: categories[4]._id,
       description:
-        "Morbi consectetur viverra urna, eu fringilla turpis faucibus sit amet. Suspendisse potenti. Donec at dui ac sapien eleifend hendrerit vel sit amet lectus.",
-      image: "alphabet-blocks.jpg",
-      price: 9.99,
-      quantity: 600,
+        "A blade runner must pursue and terminate four replicants who stole a ship in space, and have returned to Earth to find their creator.",
+      image: "bladerunner.jpg",
+      price: 27.99,
+      quantity: 33,
+    },
+    {
+      name: "Home Alone",
+      category: categories[5]._id,
+      description:
+        "An eight-year-old troublemaker must protect his house from a pair of burglars when he is accidentally left home alone by his family during Christmas vacation.",
+      image: "home-alone.jpg",
+      price: 34.99,
+      quantity: 12,
+    },
+    {
+      name: "Frozen",
+      category: categories[5]._id,
+      description:
+        "When the newly crowned Queen Elsa accidentally uses her power to turn things into ice to curse her home in infinite winter, her sister Anna teams up with a mountain man, his playful reindeer, and a snowman to change the weather condition.",
+      image: "frozen.jpg",
+      price: 22.99,
+      quantity: 30,
+    },
+    {
+      name: "Soul",
+      category: categories[5]._id,
+      description:
+        "After landing the gig of a lifetime, a New York jazz pianist suddenly finds himself trapped in a strange land between Earth and the afterlife.",
+      image: "soul.jpg",
+      price: 44.99,
+      quantity: 51,
     },
   ]);
 
@@ -132,10 +169,10 @@ db.once("open", async () => {
   await User.deleteMany();
 
   await User.create({
-    firstName: "Pamela",
-    lastName: "Washington",
-    email: "pamela@testmail.com",
-    password: "password12345",
+    firstName: "Molly",
+    lastName: "Moo",
+    email: "moobear@yahoo.com",
+    password: "123456",
     orders: [
       {
         products: [products[0]._id, products[0]._id, products[1]._id],
@@ -144,10 +181,10 @@ db.once("open", async () => {
   });
 
   await User.create({
-    firstName: "Elijah",
-    lastName: "Holt",
-    email: "eholt@testmail.com",
-    password: "password12345",
+    firstName: "Mira",
+    lastName: "Pups",
+    email: "mirpups@yahoo.com",
+    password: "123456",
   });
 
   console.log("users seeded");
