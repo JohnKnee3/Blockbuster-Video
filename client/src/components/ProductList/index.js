@@ -52,7 +52,8 @@ function ProductList() {
 
   return (
     <div className="my-2">
-      <h2>The Best {currentCategory.name} Films</h2>
+      {console.log("I am currentCategory", currentCategory)}
+      <h2>Simply the best {currentCategory.title}</h2>
       {state.products.length ? (
         <div className="flex-row">
           {filterProducts().map((product) => (
