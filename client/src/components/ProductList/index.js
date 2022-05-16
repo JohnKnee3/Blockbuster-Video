@@ -48,16 +48,16 @@ function ProductList() {
     console.log("I am products", state.products);
     console.log(
       "I am StackOverflow",
-      state.products.filter(({ categoryz }) =>
-        categoryz.some(({ _id }) => _id === currentCategory._id)
+      state.products.filter(({ categories }) =>
+        categories.some(({ _id }) => _id === currentCategory._id)
       )
     );
 
     // return state.products.filter(
     //   (product) => product.category._id === currentCategory._id
     // );
-    return state.products.filter(({ categoryz }) =>
-      categoryz.some(({ _id }) => _id === currentCategory._id)
+    return state.products.filter(({ categories }) =>
+      categories.some(({ _id }) => _id === currentCategory._id)
     );
   }
 

@@ -14,7 +14,7 @@ const typeDefs = gql`
     image: String
     quantity: Int
     price: Float
-    categoryz: [Category]
+    categories: [Category]
   }
 
   type Order {
@@ -42,7 +42,7 @@ const typeDefs = gql`
 
   type Query {
     categories: [Category]
-    products(categoryz: ID, name: String): [Product]
+    products(categories: ID, name: String): [Product]
     product(_id: ID!): Product
     user: User
     order(_id: ID!): Order

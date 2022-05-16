@@ -22,8 +22,8 @@ function CategoryMenu() {
         categories: categoryData.categories,
       });
       // also store the category data in IndexedDB
-      categoryData.categories.forEach((categoryz) => {
-        idbPromise("categories", "put", categoryz);
+      categoryData.categories.forEach((categories) => {
+        idbPromise("categories", "put", categories);
       });
     } else if (!loading) {
       // if the user is offline, load data from IndexedDB

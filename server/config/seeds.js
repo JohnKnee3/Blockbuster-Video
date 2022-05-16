@@ -25,7 +25,7 @@ db.once("open", async () => {
       description:
         "The lives of two mob hitmen, a boxer, a gangster and his wife, and a pair of diner bandits intertwine in four tales of violence and redemption.",
       image: "pulp-fiction.jpg",
-      categoryz: [categories[0]._id, categories[2]._id, categories[7]._id],
+      categories: [categories[0]._id, categories[2]._id, categories[7]._id],
       price: 44.99,
       quantity: 50,
     },
@@ -34,13 +34,13 @@ db.once("open", async () => {
       description:
         "Violence and mayhem ensue after a hunter stumbles upon a drug deal gone wrong and more than two million dollars in cash near the Rio Grande.",
       image: "no-country-for-old-men.jpg",
-      categoryz: [categories[0]._id, categories[7]._id],
+      categories: [categories[0]._id, categories[7]._id],
       price: 29.99,
       quantity: 500,
     },
     {
       name: "Die Hard",
-      categoryz: [categories[1]._id, categories[7]._id],
+      categories: [categories[1]._id, categories[7]._id],
       description:
         "An NYPD officer tries to save his wife and several others taken hostage by German terrorists during a Christmas party at the Nakatomi Plaza in Los Angeles.",
       image: "die-hard.jpg",
@@ -49,7 +49,7 @@ db.once("open", async () => {
     },
     {
       name: "Fearless",
-      categoryz: [categories[0]._id, categories[1]._id, categories[7]._id],
+      categories: [categories[0]._id, categories[1]._id, categories[7]._id],
       description:
         "A biography of Chinese Martial Arts Master Huo Yuanjia, who is the founder and spiritual guru of the Jin Wu Sports Federation.",
       image: "fearless.jpg",
@@ -58,7 +58,7 @@ db.once("open", async () => {
     },
     {
       name: "Braveheart",
-      categoryz: [categories[0]._id, categories[1]._id, categories[7]._id],
+      categories: [categories[0]._id, categories[1]._id, categories[7]._id],
       description:
         "Scottish warrior William Wallace leads his countrymen in a rebellion to free his homeland from the tyranny of King Edward I of England.",
       image: "braveheart.jpg",
@@ -67,7 +67,7 @@ db.once("open", async () => {
     },
     {
       name: "The Big Lebowski",
-      categoryz: [categories[2]._id, categories[7]._id],
+      categories: [categories[2]._id, categories[7]._id],
       description:
         "Ultimate L.A. slacker Jeff The Dude Lebowski, mistaken for a millionaire of the same name, seeks restitution for a rug ruined by debt collectors, enlisting his bowling buddies for help while trying to find the millionaire's missing wife.",
       image: "the-big-lebowski.jpg",
@@ -76,7 +76,7 @@ db.once("open", async () => {
     },
     {
       name: "Meet the Parents",
-      categoryz: [categories[2]._id, categories[6]._id, categories[7]._id],
+      categories: [categories[2]._id, categories[6]._id, categories[7]._id],
       description:
         "Male nurse Greg Focker meets his girlfriend's parents before proposing, but her suspicious father is every date's worst nightmare.",
       image: "meet-the-parents.jpg",
@@ -85,7 +85,7 @@ db.once("open", async () => {
     },
     {
       name: "The Ring",
-      categoryz: [categories[3]._id, categories[7]._id],
+      categories: [categories[3]._id, categories[7]._id],
       description:
         "A journalist must investigate a mysterious videotape which seems to cause the death of anyone one week to the day after they view it.",
       image: "the-ring.jpg",
@@ -94,7 +94,7 @@ db.once("open", async () => {
     },
     {
       name: "Scream",
-      categoryz: [categories[3]._id, categories[7]._id],
+      categories: [categories[3]._id, categories[7]._id],
       description:
         "A year after the murder of her mother, a teenage girl is terrorized by a new killer, who targets the girl and her friends by using horror films as part of a deadly game.",
       image: "scream.jpg",
@@ -103,7 +103,7 @@ db.once("open", async () => {
     },
     {
       name: "Aliens",
-      categoryz: [categories[1]._id, categories[4]._id, categories[7]._id],
+      categories: [categories[1]._id, categories[4]._id, categories[7]._id],
       description:
         "Fifty-seven years after surviving an apocalyptic attack aboard her space vessel by merciless space creatures, Officer Ripley awakens from hyper-sleep and tries to warn anyone who will listen about the predators.",
       image: "aliens.jpg",
@@ -112,7 +112,7 @@ db.once("open", async () => {
     },
     {
       name: "Everything Everywhere All at Once",
-      categoryz: [categories[1]._id, categories[4]._id, categories[7]._id],
+      categories: [categories[1]._id, categories[4]._id, categories[7]._id],
       description:
         "An aging Chinese immigrant is swept up in an insane adventure, where she alone can save the world by exploring other universes connecting with the lives she could have led.",
       image: "everything-everywhere-all-at-once.jpg",
@@ -121,7 +121,7 @@ db.once("open", async () => {
     },
     {
       name: "Arrival",
-      categoryz: [categories[0]._id, categories[4]._id, categories[7]._id],
+      categories: [categories[0]._id, categories[4]._id, categories[7]._id],
       description:
         "A linguist works with the military to communicate with alien lifeforms after twelve mysterious spacecraft appear around the world.",
       image: "arrival.jpg",
@@ -130,7 +130,7 @@ db.once("open", async () => {
     },
     {
       name: "Blade Runner",
-      categoryz: [
+      categories: [
         categories[0]._id,
         categories[1]._id,
         categories[4]._id,
@@ -144,7 +144,7 @@ db.once("open", async () => {
     },
     {
       name: "Home Alone",
-      categoryz: [categories[2]._id, categories[5]._id, categories[7]._id],
+      categories: [categories[2]._id, categories[5]._id, categories[7]._id],
       description:
         "An eight-year-old troublemaker must protect his house from a pair of burglars when he is accidentally left home alone by his family during Christmas vacation.",
       image: "home-alone.jpg",
@@ -153,7 +153,7 @@ db.once("open", async () => {
     },
     {
       name: "Frozen",
-      categoryz: [categories[2]._id, categories[5]._id, categories[7]._id],
+      categories: [categories[2]._id, categories[5]._id, categories[7]._id],
       description:
         "When the newly crowned Queen Elsa accidentally uses her power to turn things into ice to curse her home in infinite winter, her sister Anna teams up with a mountain man, his playful reindeer, and a snowman to change the weather condition.",
       image: "frozen.jpg",
@@ -162,7 +162,7 @@ db.once("open", async () => {
     },
     {
       name: "Soul",
-      categoryz: [categories[2]._id, categories[5]._id, categories[7]._id],
+      categories: [categories[2]._id, categories[5]._id, categories[7]._id],
       description:
         "After landing the gig of a lifetime, a New York jazz pianist suddenly finds himself trapped in a strange land between Earth and the afterlife.",
       image: "soul.jpg",
@@ -171,7 +171,7 @@ db.once("open", async () => {
     },
     {
       name: "About Time",
-      categoryz: [
+      categories: [
         categories[0]._id,
         categories[2]._id,
         categories[6]._id,
@@ -185,7 +185,7 @@ db.once("open", async () => {
     },
     {
       name: "Before Sunset",
-      categoryz: [categories[0]._id, categories[6]._id, categories[7]._id],
+      categories: [categories[0]._id, categories[6]._id, categories[7]._id],
       description:
         "Nine years after Jesse and Celine first met, they encounter each other again on the French leg of Jesse's book tour.",
       image: "before-sunset.jpg",
