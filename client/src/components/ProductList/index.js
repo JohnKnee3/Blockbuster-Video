@@ -44,15 +44,25 @@ function ProductList() {
     if (!currentCategory) {
       return state.products;
     }
+    console.log("I am currentCategory", currentCategory);
+    console.log("I am products", state.products);
+    console.log(
+      "I am StackOverflow",
+      state.products.filter(({ category }) =>
+        category.some(({ _id }) => _id === currentCategory._id)
+      )
+    );
 
-    return state.products.filter(
-      (product) => product.category._id === currentCategory._id
+    // return state.products.filter(
+    //   (product) => product.category._id === currentCategory._id
+    // );
+    return state.products.filter(({ category }) =>
+      category.some(({ _id }) => _id === currentCategory._id)
     );
   }
 
   return (
     <div className="my-2">
-      {console.log("I am currentCategory", currentCategory)}
       <h2>Simply the best {currentCategory.title}</h2>
       {state.products.length ? (
         <div className="flex-row">
