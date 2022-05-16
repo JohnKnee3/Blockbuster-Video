@@ -3,7 +3,7 @@
   --secondary: #383d95;
   --tertiary: #bd7100;
   --light: #363f90;
-  --dark: #eee14a;
+  --dark: #141634;
   --error: rgb(228, 46, 1);
   --spacing-one: calc(1rem * 0.5);
   --spacing-two: calc(1rem);
@@ -74,6 +74,10 @@ a {
   color: var(--tertiary);
   text-decoration: none;
   font-weight: bold;
+}
+
+ul {
+  list-style-type: none;
 }
 
 a:hover {
