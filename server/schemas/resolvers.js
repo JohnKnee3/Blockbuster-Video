@@ -8,11 +8,11 @@ const resolvers = {
     categories: async () => {
       return await Category.find();
     },
-    products: async (parent, { category, name }) => {
+    products: async (parent, { categoryz, name }) => {
       const params = {};
 
-      if (category) {
-        params.category = category;
+      if (categoryz) {
+        params.categoryz = categoryz;
       }
 
       if (name) {
@@ -21,16 +21,16 @@ const resolvers = {
         };
       }
 
-      return await Product.find(params).populate("category");
+      return await Product.find(params).populate("categoryz");
     },
     product: async (parent, { _id }) => {
-      return await Product.findById(_id).populate("category");
+      return await Product.findById(_id).populate("categoryz");
     },
     user: async (parent, args, context) => {
       if (context.user) {
         const user = await User.findById(context.user._id).populate({
           path: "orders.products",
-          populate: "category",
+          populate: "categoryz",
         });
 
         user.orders.sort((a, b) => b.purchaseDate - a.purchaseDate);
@@ -44,7 +44,7 @@ const resolvers = {
       if (context.user) {
         const user = await User.findById(context.user._id).populate({
           path: "orders.products",
-          populate: "category",
+          populate: "categoryz",
         });
 
         return user.orders.id(_id);
