@@ -1,5 +1,5 @@
 const { AuthenticationError } = require("apollo-server-express");
-const { User, Product, Category, Order } = require("../models");
+const { User, Product, Category, Order, MovieComment } = require("../models");
 const { signToken } = require("../utils/auth");
 const stripe = require("stripe")("sk_test_4eC39HqLyjWDarjtT1zdp7dc");
 
@@ -51,6 +51,10 @@ const resolvers = {
       }
 
       throw new AuthenticationError("Not logged in");
+    },
+    movieComment: async (parent, { username }) => {
+      const params = username ? { username } : {};
+      return MovieComment. find(params).sort({ createdAt: -1 });
     },
     checkout: async (parent, args, context) => {
       const url = new URL(context.headers.referer).origin;
@@ -109,6 +113,21 @@ const resolvers = {
       }
 
       throw new AuthenticationError("Not logged in");
+    },
+    addMovieComment: async (parent, args, context) => {
+      if (context.user) {
+        const comment = await MovieComment.create({ ...args, username: context.user.username });
+
+        await User.findByIdAndUpdate(
+          { _id: context.user._id },
+          { $push: { movieComment: movieComment._id } },
+          { new: true }
+        );
+
+        return comment;
+      }
+
+      throw new AuthenticationError('You need to be logged in!');
     },
     updateUser: async (parent, args, context) => {
       if (context.user) {

@@ -34,18 +34,31 @@ export const ADD_USER = gql`
     $firstName: String!
     $lastName: String!
     $email: String!
+    $username: String!
     $password: String!
   ) {
     addUser(
       firstName: $firstName
       lastName: $lastName
       email: $email
+      username: $username
       password: $password
     ) {
       token
       user {
         _id
       }
+    }
+  }
+`;
+
+export const ADD_MOVIECOMMENT = gql`
+  mutation addMovieComment($movieCommentText: String!) {
+    addMovieComment(movieCommentText: $movieCommentText) {
+      _id
+      movieCommentText
+      createdAt
+      username
     }
   }
 `;

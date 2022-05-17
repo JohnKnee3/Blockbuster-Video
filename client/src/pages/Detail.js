@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { useQuery } from '@apollo/react-hooks';
 
+import MovieCommentList from "../components/MovieCommentList";
+import MovieCommentForm from '../components/MovieCommentForm';
 import { QUERY_PRODUCTS } from "../utils/queries";
 import spinner from '../assets/spinner.gif'
 
@@ -17,9 +19,9 @@ function Detail() {
   const { id } = useParams();
   
   const [currentProduct, setCurrentProduct] = useState({})
-  
+
   const { loading, data } = useQuery(QUERY_PRODUCTS);
-  
+
   const { products, cart } = state;
   
   useEffect(() => {
@@ -122,6 +124,8 @@ function Detail() {
         loading ? <img src={spinner} alt="loading" /> : null
       }
       <Cart />
+      <MovieCommentList />
+      <MovieCommentForm />
     </>
   );
 };

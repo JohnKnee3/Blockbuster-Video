@@ -44,6 +44,7 @@ export const QUERY_CATEGORIES = gql`
 export const QUERY_USER = gql`
   {
     user {
+      username
       firstName
       lastName
       orders {
@@ -58,6 +59,22 @@ export const QUERY_USER = gql`
           image
         }
       }
+      movieComment {
+        _id
+        movieCommentText
+        createdAt
+      }
+    }
+  }
+`;
+
+export const QUERY_MOVIECOMMENT = gql`
+  query movieComment($username: String) {
+    movieComment(username: $username) {
+      _id
+      movieCommentText
+      createdAt
+      username
     }
   }
 `;
