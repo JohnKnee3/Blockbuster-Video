@@ -44,7 +44,7 @@ function Nav() {
       <div className="logo">
         <Link to="/">
           <img className="logo-image" src={logo} alt="React Retreat" />
-          <h1 className="logo-name">Blockbuster Video</h1>
+          <h1 className="logo-name">BLOCKBUSTER VIDEO</h1>
         </Link>
       </div>
 
