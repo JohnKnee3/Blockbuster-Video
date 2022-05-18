@@ -5,6 +5,9 @@ const stripe = require("stripe")("sk_test_4eC39HqLyjWDarjtT1zdp7dc");
 
 const resolvers = {
   Query: {
+    users: async () => {
+      return User.find().select("-__v -password");
+    },
     categories: async () => {
       return await Category.find();
     },
@@ -54,7 +57,7 @@ const resolvers = {
     },
     movieComment: async (parent, { username }) => {
       const params = username ? { username } : {};
-      return MovieComment. find(params).sort({ createdAt: -1 });
+      return MovieComment.find(params).sort({ createdAt: -1 });
     },
     checkout: async (parent, args, context) => {
       const url = new URL(context.headers.referer).origin;
@@ -116,7 +119,10 @@ const resolvers = {
     },
     addMovieComment: async (parent, args, context) => {
       if (context.user) {
-        const comment = await MovieComment.create({ ...args, username: context.user.username });
+        const comment = await MovieComment.create({
+          ...args,
+          username: context.user.username,
+        });
 
         await User.findByIdAndUpdate(
           { _id: context.user._id },
@@ -127,7 +133,7 @@ const resolvers = {
         return comment;
       }
 
-      throw new AuthenticationError('You need to be logged in!');
+      throw new AuthenticationError("You need to be logged in!");
     },
     updateUser: async (parent, args, context) => {
       if (context.user) {
