@@ -35,9 +35,9 @@ const typeDefs = gql`
 
   type MovieComment {
     _id: ID
-    movieCommentText: String
+    movieCommentBody: String
     createdAt: String
-    username: String
+    firstName: String
   }
 
   type Checkout {

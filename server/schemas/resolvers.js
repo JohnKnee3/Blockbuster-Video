@@ -142,13 +142,12 @@ const resolvers = {
     ) => {
       if (context.user) {
         const updatedProduct = await Product.findOneAndUpdate(
-          console.log("I am context.user", context.user),
           { _id: productId },
           {
             $push: {
               movieComments: {
                 movieCommentBody,
-                username: context.user.username,
+                firstName: context.user.firstName,
               },
             },
           },
