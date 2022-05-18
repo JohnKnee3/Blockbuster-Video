@@ -1,24 +1,28 @@
-const { Schema, model } = require('mongoose');
-const dateFormat = require('../utils/dateFormat');
+const { Schema } = require("mongoose");
+const dateFormat = require("../utils/dateFormat");
 
-const movieCommentSchema = new Schema({
-    movieCommentText: {
-        type: String,
-        required: "You need to leave a comment!",
-        minlength: 1,
-        maxlength: 280
+const movieCommentSchema = new Schema(
+  {
+    movieCommentBody: {
+      type: String,
+      required: true,
+      maxlength: 280,
+    },
+    firstName: {
+      type: String,
+      required: true,
     },
     createdAt: {
-        type: Date,
-        default: Date.now,
-        get: timestamp => dateFormat(timestamp)
-    },     
-    username: {
-        type: String,
-        required: true
-    }
-})
+      type: Date,
+      default: Date.now,
+      get: (timestamp) => dateFormat(timestamp),
+    },
+  },
+  {
+    toJSON: {
+      getters: true,
+    },
+  }
+);
 
-const MovieComment = model('MovieComment', movieCommentSchema);
-
-module.exports = MovieComment;
+module.exports = movieCommentSchema;

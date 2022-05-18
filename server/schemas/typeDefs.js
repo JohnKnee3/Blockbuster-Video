@@ -14,6 +14,7 @@ const typeDefs = gql`
     image: String
     quantity: Int
     price: Float
+    movieComments: [MovieComment]
     categories: [Category]
   }
 
@@ -68,7 +69,7 @@ const typeDefs = gql`
       password: String!
     ): Auth
     addOrder(products: [ID]!): Order
-    addMovieComment(movieCommentText: String!): MovieComment
+    addMovieComment(productId: ID!, movieCommentBody: String!): Product
     updateUser(
       username: String
       firstName: String
@@ -82,3 +83,5 @@ const typeDefs = gql`
 `;
 
 module.exports = typeDefs;
+
+// addMovieComment(movieCommentText: String!): MovieComment

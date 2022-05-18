@@ -55,10 +55,10 @@ const resolvers = {
 
       throw new AuthenticationError("Not logged in");
     },
-    movieComment: async (parent, { username }) => {
-      const params = username ? { username } : {};
-      return MovieComment.find(params).sort({ createdAt: -1 });
-    },
+    // movieComment: async (parent, { username }) => {
+    //   const params = username ? { username } : {};
+    //   return MovieComment.find(params).sort({ createdAt: -1 });
+    // },
     checkout: async (parent, args, context) => {
       const url = new URL(context.headers.referer).origin;
       const order = new Order({ products: args.products });
@@ -117,20 +117,45 @@ const resolvers = {
 
       throw new AuthenticationError("Not logged in");
     },
-    addMovieComment: async (parent, args, context) => {
-      if (context.user) {
-        const comment = await MovieComment.create({
-          ...args,
-          username: context.user.username,
-        });
+    // addMovieComment: async (parent, args, context) => {
+    //   if (context.user) {
+    //     const comment = await MovieComment.create({
+    //       ...args,
+    //       username: context.user.username,
+    //     });
 
-        await User.findByIdAndUpdate(
-          { _id: context.user._id },
-          { $push: { movieComment: movieComment._id } },
-          { new: true }
+    //     await User.findByIdAndUpdate(
+    //       { _id: context.user._id },
+    //       { $push: { movieComment: movieComment._id } },
+    //       { new: true }username
+    //     );
+
+    //     return comment;
+    //   }
+
+    //   throw new AuthenticationError("You need to be logged in!");
+    // },
+    addMovieComment: async (
+      parent,
+      { productId, movieCommentBody },
+      context
+    ) => {
+      if (context.user) {
+        const updatedProduct = await Product.findOneAndUpdate(
+          console.log("I am context.user", context.user),
+          { _id: productId },
+          {
+            $push: {
+              movieComments: {
+                movieCommentBody,
+                username: context.user.username,
+              },
+            },
+          },
+          { new: true, runValidators: true }
         );
 
-        return comment;
+        return updatedProduct;
       }
 
       throw new AuthenticationError("You need to be logged in!");
