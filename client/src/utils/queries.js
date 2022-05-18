@@ -59,11 +59,6 @@ export const QUERY_USER = gql`
           image
         }
       }
-      movieComment {
-        _id
-        movieCommentText
-        createdAt
-      }
     }
   }
 `;
@@ -86,3 +81,9 @@ export const QUERY_CHECKOUT = gql`
     }
   }
 `;
+
+// movieComment {
+//   _id
+//   movieCommentText
+//   createdAt
+// }
