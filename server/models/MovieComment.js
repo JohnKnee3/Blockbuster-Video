@@ -3,12 +3,12 @@ const dateFormat = require("../utils/dateFormat");
 
 const movieCommentSchema = new Schema(
   {
-    movieCommentBody: {
+    movieCommentText: {
       type: String,
       required: true,
       maxlength: 280,
     },
-    firstName: {
+    username: {
       type: String,
       required: true,
     },

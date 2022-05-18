@@ -35,9 +35,9 @@ const typeDefs = gql`
 
   type MovieComment {
     _id: ID
-    movieCommentBody: String
+    movieCommentText: String
     createdAt: String
-    firstName: String
+    username: String
   }
 
   type Checkout {
@@ -69,7 +69,7 @@ const typeDefs = gql`
       password: String!
     ): Auth
     addOrder(products: [ID]!): Order
-    addMovieComment(productId: ID!, movieCommentBody: String!): Product
+    addMovieComment(productId: ID!, movieCommentText: String!): Product
     updateUser(
       username: String
       firstName: String

@@ -137,7 +137,7 @@ const resolvers = {
     // },
     addMovieComment: async (
       parent,
-      { productId, movieCommentBody },
+      { productId, movieCommentText },
       context
     ) => {
       if (context.user) {
@@ -146,8 +146,8 @@ const resolvers = {
           {
             $push: {
               movieComments: {
-                movieCommentBody,
-                firstName: context.user.firstName,
+                movieCommentText,
+                username: context.user.username,
               },
             },
           },
