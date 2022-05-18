@@ -6,6 +6,7 @@ import {
     UPDATE_CURRENT_CATEGORY,
     ADD_TO_CART,
     ADD_MULTIPLE_TO_CART,
+    ADD_MOVIE_COMMENT,
     REMOVE_FROM_CART,
     UPDATE_CART_QUANTITY,
     CLEAR_CART,
@@ -31,7 +32,8 @@ const initialState = {
         purchaseQuantity: 2
       }
     ],
-    cartOpen: false
+    cartOpen: false,
+    movieComment: []
   };
 
 // test UPDATE_PRODUCTS action to add a product to the array
@@ -82,6 +84,16 @@ test('ADD_MULTIPLE_TO_CART', () => {
     });
     expect(newState.cart.length).toBe(4);
     expect(initialState.cart.length).toBe(2);
+});
+
+// test ADD_MOVIE_COMMENT to add a comment to the product detail page
+test('ADD_MOVIE_COMMENT', () => {
+    let newState = reducer(initialState, {
+        type: ADD_MOVIE_COMMENT,
+        movieComment: [{},{}]
+    });
+    expect(newState.movieComment.length).toBe(2);
+    expect(initialState.movieComment.length).toBe(0);
 });
 
 // test REMOVE_FROM_CART remove item from cart with an item still in cart and when item removed is last remaining item

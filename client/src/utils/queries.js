@@ -68,9 +68,9 @@ export const QUERY_USER = gql`
   }
 `;
 
-export const QUERY_MOVIECOMMENT = gql`
-  query movieComment($username: String) {
-    movieComment(username: $username) {
+export const QUERY_MOVIE_COMMENT = gql`
+  query movieComment($movieCommentText: String) {
+    movieComment(movieCommentText: $movieCommentText) {
       _id
       movieCommentText
       createdAt

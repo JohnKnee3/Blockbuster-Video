@@ -10,6 +10,7 @@ const StoreProvider = ({ value = [], ...props }) => {
         products: [],
         categories: [],
         currentCategory: '',
+        movieComment: [],
         cart: [],
         cartOpen: false
     });

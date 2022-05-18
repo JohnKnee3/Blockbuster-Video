@@ -1,33 +1,40 @@
 import React, { useEffect, useState } from "react";
+import { useMutation } from '@apollo/react-hooks';
+import { ADD_MOVIE_COMMENT } from "../../utils/mutations";
 
-import { useStoreContext } from '../../utils/GlobalState';
-import { ADD_MOVIECOMMENT } from '../../utils/actions';
-
-function MovieCommentForm({comments}) {
-    const [state, dispatch] = useStoreContext();
-
-    const [commentText, setText] = useState('');
+function MovieCommentForm() {
+    const [formState, setFormState] = useState({ movieCommentText:'' });
     const [characterCount, setCharacterCount] = useState(0);
 
+    const [addMovieComment] = useMutation(ADD_MOVIE_COMMENT);
+    
+    const handleFormSubmit = async event => {
+        // add a comment
+        try {
+            const mutationResponse = await addMovieComment({
+                variables: {
+                    movieCommentText: formState.movieCommentText
+                }
+            });
+            // clear form value
+            setFormState('');
+            setCharacterCount(0);
+        } catch (e) {
+        }
+    };
     
     const handleChange = event => {
+        console.log("handleChange" + event.target.value);
         if (event.target.value.length <= 280) {
-          setText(event.target.value);
-          setCharacterCount(event.target.value.length);
+            const { name, value } = event.target;
+            setFormState({
+                ...formState,
+                [name]: value
+            });
+            setCharacterCount(event.target.value.length);
         }
     };
 
-    const addMovieComment = () => {
-        // add a comment
-        dispatch({
-          type: ADD_MOVIECOMMENT,
-          movieComment: { ...commentText }
-        })
-        // clear form value
-        setText('');
-        setCharacterCount(0);
-    };
-    
     return (
         <div>
             <p className={`m-0 ${characterCount === 280 ? 'text-error' : ''}`}>
@@ -39,14 +46,14 @@ function MovieCommentForm({comments}) {
                 >
                 <textarea
                 placeholder="Add a new comment"
-                // value=""
                 className="form-input col-12 col-md-9"
+                name="movieCommentText"
                 onChange={handleChange}
                 ></textarea>
                 <button 
                 className="btn col-12 col-md-3" 
                 type="submit"
-                onClick={addMovieComment}
+                onClick={handleFormSubmit}
                 >
                 Submit
                 </button>

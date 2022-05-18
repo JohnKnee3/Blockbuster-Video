@@ -1,13 +1,12 @@
 import React from 'react';
 import { useQuery } from "@apollo/react-hooks";
 
-import { QUERY_MOVIECOMMENT } from '../../utils/queries';
-import MovieCommentForm from '../MovieCommentForm';
+import { QUERY_MOVIE_COMMENT } from '../../utils/queries';
 
 function MovieCommentList () {
-    const { loading, data } = useQuery(QUERY_MOVIECOMMENT);
-    const comments = data?.comments || [];
-
+    const { data } = useQuery(QUERY_MOVIE_COMMENT);
+    const comments = data?.movieComment || {};
+    
     if (!comments.length) {
       return <h3>No Comments Yet</h3>;
     }

@@ -5,7 +5,7 @@ import {
     UPDATE_CURRENT_CATEGORY,
     ADD_TO_CART,
     ADD_MULTIPLE_TO_CART,
-    ADD_MOVIECOMMENT,
+    // ADD_MOVIE_COMMENT,
     REMOVE_FROM_CART,
     UPDATE_CART_QUANTITY,
     CLEAR_CART,
@@ -48,12 +48,12 @@ export const reducer = (state, action) => {
                 ...state,
                 cart: [...state.cart, ...action.products]
             };
-        // if the action type is ADD_MOVIECOMMENT, return a new state object with the updated detail page with a new movie comment
-        case ADD_MOVIECOMMENT: 
-            return {
-                ...state,
-                movieComment: [...action.movieComment]
-            }
+        // if the action type is ADD_MOVIE_COMMENT, return a new state object with the updated detail page with a new movie comment
+        // case ADD_MOVIE_COMMENT: 
+        //     return {
+        //         ...state,
+        //         movieCommentText: [...action.movieCommentText]
+        //     }
         
         // if the action type is REMOVE_FROM_CART, return a new state object with the updated cart and close the cart if last item is removed
         case REMOVE_FROM_CART:

@@ -52,9 +52,13 @@ export const ADD_USER = gql`
   }
 `;
 
-export const ADD_MOVIECOMMENT = gql`
-  mutation addMovieComment($movieCommentText: String!) {
-    addMovieComment(movieCommentText: $movieCommentText) {
+export const ADD_MOVIE_COMMENT = gql`
+  mutation addMovieComment(
+    $movieCommentText: String!
+  ) {
+    addMovieComment(
+      movieCommentText: $movieCommentText
+    ) {
       _id
       movieCommentText
       createdAt
