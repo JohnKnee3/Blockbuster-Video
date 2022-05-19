@@ -236,6 +236,9 @@ input:focus {
 .need-space {
   margin-top: 20rem;
 }
+.need-lil-less-space {
+  margin-top: 10rem;
+}
 .need-less-space {
   margin-top: 3rem;
 }
