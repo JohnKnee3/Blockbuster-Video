@@ -2,26 +2,23 @@ import React from "react";
 
 const About = () => {
   return (
-    <div className="container">
+    <div className="container about-background">
+      <h2 className="text-center">WE ARE BACK!!!!!!</h2>
+
+      <img
+        className="logo-center"
+        alt="Blockbuster Logo"
+        src={`/logo512.png`}
+      />
+
+      <p className="text-center">
+        I know you missed us and are even like man where have you been? Well let
+        us tell you...
+      </p>
+
       <div className="row">
-        <h2>WE ARE BACK!!!!!!</h2>
-        <div className="col">
-          <img
-            className="about-image"
-            alt="Blockbuster Logo"
-            src={`/logo512.png`}
-          />
-        </div>
-        <div className="col">
-          <p>
-            I know you missed us and are even like man where have you been? Well
-            let us tell you...
-          </p>
-        </div>
-      </div>
-      <div className="row">
-        <div className="col">
-          <p>When we went under we got really sad.</p>
+        <div className="col text-center">
+          <p className="text-left">When we went under we got really sad.</p>
         </div>
         <div className="col">
           <img
@@ -39,13 +36,13 @@ const About = () => {
             src={`/images/soul-searching.jpeg`}
           />
         </div>
-        <div className="col">
-          <p>We did some soul searching.</p>
+        <div className="col text-center">
+          <p className="text-right">We did some soul searching.</p>
         </div>
       </div>
       <div className="row">
-        <div className="col">
-          <p>We read a book.</p>
+        <div className="col text-center">
+          <p className="text-left">We read a book.</p>
         </div>
         <div className="col">
           <img
@@ -63,9 +60,20 @@ const About = () => {
             src={`/images/farmers-market.jpeg`}
           />
         </div>
-        <div className="col">
-          <p>We went to serveral farmers markets and finally....</p>
+        <div className="col text-center">
+          <p className="text-right">
+            We went to serveral farmers markets and finally....
+          </p>
         </div>
+      </div>
+
+      <div className="need-space">
+        <h2 className="text-center">An Idea!!!!</h2>
+        <img
+          className="logo-center"
+          alt="Blockbuster Logo"
+          src={`/images/idea.png`}
+        />
       </div>
     </div>
   );
