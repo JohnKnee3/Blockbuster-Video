@@ -21,7 +21,7 @@ const resolvers = {
         };
       }
 
-      return await Product.find(params).populate("categories");
+      return await Product.find(params).populate("categories").populate("movieComments");
     },
     product: async (parent, { _id }) => {
       return await Product.findById(_id).populate("categories");

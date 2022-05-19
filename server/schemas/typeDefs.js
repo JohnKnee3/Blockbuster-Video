@@ -68,7 +68,7 @@ const typeDefs = gql`
       password: String!
     ): Auth
     addOrder(products: [ID]!): Order
-    addMovieComment(productId: ID!, movieCommentText: String!): Product
+    addMovieComment(movieCommentText: String!): MovieComment
     updateUser(
       username: String
       firstName: String
