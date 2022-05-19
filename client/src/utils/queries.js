@@ -12,6 +12,12 @@ export const QUERY_PRODUCTS = gql`
       categories {
         _id
       }
+      movieComments {
+        _id
+        movieCommentText
+        createdAt
+        username
+      }
     }
   }
 `;
@@ -59,14 +65,15 @@ export const QUERY_USER = gql`
           image
         }
       }
-      movieComment {
-        _id
-        movieCommentText
-        createdAt
-      }
     }
   }
 `;
+
+// movieComment {
+//   _id
+//   movieCommentText
+//   createdAt
+// }
 
 export const QUERY_MOVIE_COMMENT = gql`
   query movieComment($movieCommentText: String) {
