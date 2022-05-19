@@ -61,12 +61,12 @@ const About = () => {
           />
         </div>
         <div className="col text-center">
-          <p className="text-right">
-            We went to serveral farmers markets and finally....
-          </p>
+          <p className="text-right">We went to serveral farmers markets.</p>
         </div>
       </div>
-
+      <div className="need-space">
+        <h2 className="text-center">And Finally</h2>
+      </div>
       <div className="need-space">
         <h2 className="text-center">An Idea!!!!</h2>
         <img
@@ -74,6 +74,18 @@ const About = () => {
           alt="Blockbuster Logo"
           src={`/images/idea.png`}
         />
+      </div>
+      <div className="row">
+        <div className="col text-center">
+          <p className="text-left">People like hip things.</p>
+        </div>
+        <div className="col">
+          <img
+            className="about-image"
+            alt="woman reading a book"
+            src={`/images/hip-things.jpeg`}
+          />
+        </div>
       </div>
     </div>
   );
