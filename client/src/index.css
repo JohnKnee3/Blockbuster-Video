@@ -236,6 +236,9 @@ input:focus {
 .need-space {
   margin-top: 20rem;
 }
+.need-less-space {
+  margin-top: 3rem;
+}
 .card {
   width: 25%;
   text-align: center;
