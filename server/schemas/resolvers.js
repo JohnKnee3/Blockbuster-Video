@@ -159,11 +159,49 @@ const resolvers = {
 
       throw new AuthenticationError("You need to be logged in!");
     },
-    removeComment: async (parent, { productId, commentId }, context) => {
+    removeMovieComment: async (parent, { productId, commentId }, context) => {
       if (context.user) {
         const updatedProduct = await Product.findOneAndUpdate(
           { _id: productId },
           { $pull: { movieComments: { _id: commentId } } },
+          { new: true }
+        );
+        return updatedProduct;
+      }
+      throw new AuthenticationError("You need to be logged in!");
+    },
+    // updateMovieComment: async (
+    //   parent,
+    //   { productId, commentId, movieCommentText },
+    //   context
+    // ) => {
+    //   if (context.user) {
+    //     const updatedProduct = await Product.findByIdAndUpdate(
+    //       { _id: productId },
+    //       { $set: { movieComments: { movieCommentText: { _id: commentId } } } },
+    //       // { $set: { movieCommentText: { _id: commentId } } },
+    //       { new: true }
+    //     );
+    //     return updatedProduct;
+    //   }
+    //   throw new AuthenticationError("You need to be logged in!");
+    // },
+    updateMovieComment: async (
+      parent,
+      { productId, commentId, movieCommentText },
+      context
+    ) => {
+      if (context.user) {
+        const updatedProduct = await Product.findByIdAndUpdate(
+          { _id: productId, "movieComments._id": commentId },
+          {
+            $set: {
+              movieComments: {
+                "movieComments.$.movieCommentText": movieCommentText,
+              },
+            },
+          },
+
           { new: true }
         );
         return updatedProduct;
