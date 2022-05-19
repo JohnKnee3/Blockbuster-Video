@@ -55,6 +55,18 @@ const About = () => {
           />
         </Col>
       </Row>
+      <Row>
+        <Col lg={6} md={12}>
+          <img
+            className="about-image"
+            alt="person meditating"
+            src={`/images/farmers-market.jpeg`}
+          />
+        </Col>
+        <Col lg={6} md={12}>
+          <p>We went to serveral farmers markets and finally....</p>
+        </Col>
+      </Row>
     </div>
   );
 };
