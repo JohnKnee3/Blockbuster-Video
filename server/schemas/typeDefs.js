@@ -15,6 +15,7 @@ const typeDefs = gql`
     quantity: Int
     price: Float
     categories: [Category]
+    movieComments: [MovieComment]
   }
 
   type Order {
@@ -67,7 +68,7 @@ const typeDefs = gql`
       password: String!
     ): Auth
     addOrder(products: [ID]!): Order
-    addMovieComment(movieCommentText: String!): MovieComment
+    addMovieComment(productId: ID!, movieCommentText: String!): Product
     updateUser(
       username: String
       firstName: String

@@ -31,6 +31,13 @@ const productSchema = new Schema({
       required: true,
     },
   ],
+  movieComments: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "MovieComment",
+      required: true
+    }
+  ]
 });
 
 const Product = mongoose.model("Product", productSchema);
