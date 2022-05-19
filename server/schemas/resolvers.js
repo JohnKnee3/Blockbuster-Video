@@ -21,7 +21,9 @@ const resolvers = {
         };
       }
 
-      return await Product.find(params).populate("categories").populate("movieComments");
+      return await Product.find(params)
+        .populate("categories")
+        .populate("movieComments");
     },
     product: async (parent, { _id }) => {
       return await Product.findById(_id).populate("categories");
@@ -54,7 +56,7 @@ const resolvers = {
     },
     movieComment: async (parent, { username }) => {
       const params = username ? { username } : {};
-      return MovieComment. find(params).sort({ createdAt: -1 });
+      return MovieComment.find(params).sort({ createdAt: -1 });
     },
     checkout: async (parent, args, context) => {
       const url = new URL(context.headers.referer).origin;
