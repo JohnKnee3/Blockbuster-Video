@@ -1,5 +1,5 @@
 const db = require("./connection");
-const { User, Product, Category } = require("../models");
+const { User, Product, Category, MovieComment } = require("../models");
 
 db.once("open", async () => {
   await Category.deleteMany();
@@ -17,6 +17,18 @@ db.once("open", async () => {
 
   console.log("categories seeded");
 
+  await MovieComment.deleteMany();
+
+  const moviecomments = await MovieComment.insertMany([
+    {
+      movieCommentText: "This is a test",
+      username: "Moozle",
+      // productId: products[0]._id,
+    },
+  ]);
+
+  console.log("moviecomments seeded");
+
   await Product.deleteMany();
 
   const products = await Product.insertMany([
@@ -26,8 +38,8 @@ db.once("open", async () => {
         "The lives of two mob hitmen, a boxer, a gangster and his wife, and a pair of diner bandits intertwine in four tales of violence and redemption.",
       image: "pulp-fiction.jpg",
       categories: [categories[0]._id, categories[2]._id, categories[7]._id],
+      movieComments: [moviecomments[0]._id],
       price: 44.99,
-      quantity: 50,
     },
     {
       name: "No Country for Old Men",
@@ -36,7 +48,6 @@ db.once("open", async () => {
       image: "no-country-for-old-men.jpg",
       categories: [categories[0]._id, categories[7]._id],
       price: 29.99,
-      quantity: 500,
     },
     {
       name: "Die Hard",
@@ -44,8 +55,7 @@ db.once("open", async () => {
       description:
         "An NYPD officer tries to save his wife and several others taken hostage by German terrorists during a Christmas party at the Nakatomi Plaza in Los Angeles.",
       image: "die-hard.jpg",
-      price: 19.99,
-      quantity: 20,
+      price: 39.99,
     },
     {
       name: "Fearless",
@@ -54,7 +64,6 @@ db.once("open", async () => {
         "A biography of Chinese Martial Arts Master Huo Yuanjia, who is the founder and spiritual guru of the Jin Wu Sports Federation.",
       image: "fearless.jpg",
       price: 34.99,
-      quantity: 50,
     },
     {
       name: "Braveheart",
@@ -63,7 +72,6 @@ db.once("open", async () => {
         "Scottish warrior William Wallace leads his countrymen in a rebellion to free his homeland from the tyranny of King Edward I of England.",
       image: "braveheart.jpg",
       price: 14.99,
-      quantity: 100,
     },
     {
       name: "The Big Lebowski",
@@ -72,7 +80,6 @@ db.once("open", async () => {
         "Ultimate L.A. slacker Jeff The Dude Lebowski, mistaken for a millionaire of the same name, seeks restitution for a rug ruined by debt collectors, enlisting his bowling buddies for help while trying to find the millionaire's missing wife.",
       image: "the-big-lebowski.jpg",
       price: 399.99,
-      quantity: 30,
     },
     {
       name: "Meet the Parents",
@@ -81,7 +88,6 @@ db.once("open", async () => {
         "Male nurse Greg Focker meets his girlfriend's parents before proposing, but her suspicious father is every date's worst nightmare.",
       image: "meet-the-parents.jpg",
       price: 39.99,
-      quantity: 30,
     },
     {
       name: "The Ring",
@@ -89,8 +95,7 @@ db.once("open", async () => {
       description:
         "A journalist must investigate a mysterious videotape which seems to cause the death of anyone one week to the day after they view it.",
       image: "the-ring.jpg",
-      price: 19.99,
-      quantity: 100,
+      price: 39.99,
     },
     {
       name: "Scream",
@@ -99,7 +104,6 @@ db.once("open", async () => {
         "A year after the murder of her mother, a teenage girl is terrorized by a new killer, who targets the girl and her friends by using horror films as part of a deadly game.",
       image: "scream.jpg",
       price: 9.99,
-      quantity: 100,
     },
     {
       name: "Aliens",
@@ -108,7 +112,6 @@ db.once("open", async () => {
         "Fifty-seven years after surviving an apocalyptic attack aboard her space vessel by merciless space creatures, Officer Ripley awakens from hyper-sleep and tries to warn anyone who will listen about the predators.",
       image: "aliens.jpg",
       price: 21.99,
-      quantity: 50,
     },
     {
       name: "Everything Everywhere All at Once",
@@ -117,7 +120,6 @@ db.once("open", async () => {
         "An aging Chinese immigrant is swept up in an insane adventure, where she alone can save the world by exploring other universes connecting with the lives she could have led.",
       image: "everything-everywhere-all-at-once.jpg",
       price: 29.99,
-      quantity: 40,
     },
     {
       name: "Arrival",
@@ -126,7 +128,6 @@ db.once("open", async () => {
         "A linguist works with the military to communicate with alien lifeforms after twelve mysterious spacecraft appear around the world.",
       image: "arrival.jpg",
       price: 59.99,
-      quantity: 4,
     },
     {
       name: "Blade Runner",
@@ -140,7 +141,6 @@ db.once("open", async () => {
         "A blade runner must pursue and terminate four replicants who stole a ship in space, and have returned to Earth to find their creator.",
       image: "bladerunner.jpg",
       price: 27.99,
-      quantity: 33,
     },
     {
       name: "Home Alone",
@@ -149,7 +149,6 @@ db.once("open", async () => {
         "An eight-year-old troublemaker must protect his house from a pair of burglars when he is accidentally left home alone by his family during Christmas vacation.",
       image: "home-alone.jpg",
       price: 34.99,
-      quantity: 12,
     },
     {
       name: "Frozen",
@@ -158,7 +157,6 @@ db.once("open", async () => {
         "When the newly crowned Queen Elsa accidentally uses her power to turn things into ice to curse her home in infinite winter, her sister Anna teams up with a mountain man, his playful reindeer, and a snowman to change the weather condition.",
       image: "frozen.jpg",
       price: 22.99,
-      quantity: 30,
     },
     {
       name: "Soul",
@@ -167,7 +165,6 @@ db.once("open", async () => {
         "After landing the gig of a lifetime, a New York jazz pianist suddenly finds himself trapped in a strange land between Earth and the afterlife.",
       image: "soul.jpg",
       price: 44.99,
-      quantity: 51,
     },
     {
       name: "About Time",
@@ -181,7 +178,6 @@ db.once("open", async () => {
         "At the age of 21, Tim discovers he can travel in time and change what happens and has happened in his own life. His decision to make his world a better place by getting a girlfriend turns out not to be as easy as you might think.",
       image: "about-time.jpg",
       price: 51.99,
-      quantity: 50,
     },
     {
       name: "Before Sunset",
@@ -190,7 +186,6 @@ db.once("open", async () => {
         "Nine years after Jesse and Celine first met, they encounter each other again on the French leg of Jesse's book tour.",
       image: "before-sunset.jpg",
       price: 24.99,
-      quantity: 47,
     },
   ]);
 
