@@ -199,7 +199,49 @@ input:focus {
   padding-top: var(--spacing-two);
   padding-bottom: var(--spacing-two);
 }
+.row {
+  --bs-gutter-x: 1.5rem;
+  --bs-gutter-y: 0;
+  display: flex;
+  flex-wrap: wrap;
+  /* margin-top: calc(-1 * var(--bs-gutter-y));
+  margin-right: calc(-0.5 * var(--bs-gutter-x));
+  margin-left: calc(-0.5 * var(--bs-gutter-x)); */
+  margin-top: 10rem;
+}
 
+.col {
+  flex: 0 0 auto;
+  width: 50%;
+}
+.text-center {
+  margin: auto;
+  text-align: center;
+}
+.logo-center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.text-left {
+  margin-top: 10px;
+}
+.text-right {
+  margin-top: 10px;
+  /* float: right; */
+}
+/* .about-background {
+  background-color: #ff8a0040;
+} */
+.need-space {
+  margin-top: 20rem;
+}
+.need-lil-less-space {
+  margin-top: 10rem;
+}
+.need-less-space {
+  margin-top: 3rem;
+}
 .card {
   width: 25%;
   text-align: center;
