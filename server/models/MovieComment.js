@@ -16,6 +16,10 @@ const movieCommentSchema = new Schema({
     username: {
         type: String,
         required: true
+    },
+    productId: {
+        type: String,
+        // required: true
     }
 })
 

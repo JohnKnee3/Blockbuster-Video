@@ -124,8 +124,8 @@ function Detail() {
         loading ? <img src={spinner} alt="loading" /> : null
       }
       <Cart />
-      <MovieCommentList />
-      <MovieCommentForm />
+      <MovieCommentList id={id}/>
+      <MovieCommentForm id={id}/>
     </>
   );
 };

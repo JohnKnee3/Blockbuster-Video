@@ -27,7 +27,7 @@ const resolvers = {
       return await Product.find(params).populate("categories").populate("movieComments");
     },
     product: async (parent, { _id }) => {
-      return await Product.findById(_id).populate("categories");
+      return await Product.findById(_id).populate("categories").populate("movieComments");
     },
     user: async (parent, args, context) => {
       if (context.user) {
@@ -130,6 +130,7 @@ const resolvers = {
     //           movieComments: {
     //             movieCommentText,
     //             username: context.user.username,
+    //             productId: 
     //           },
     //         },
     //       },
@@ -141,21 +142,38 @@ const resolvers = {
 
     //   throw new AuthenticationError("You need to be logged in!");
     // },
-    addMovieComment: async (parent, args, context) => {
+    addMovieComment: async (parent, { ...args }, context) => {
+      console.log(args)
       if (context.user) {
-        const comment = await MovieComment.create({ ...args, username: context.user.username });
-
-        await User.findByIdAndUpdate(
-          { _id: context.user._id },
-          { $push: { movieComment: movieComment._id } },
+        const comment = await MovieComment.create(
+          { productId:args.productId, movieCommentText: args.movieCommentText, username: context.user.username });
+        
+        await Product.findByIdAndUpdate(args.productId,
+          {
+            $push: {
+              movieComments: comment
+            }
+          },
           { new: true }
-        );
-
+        )
         return comment;
       }
-
       throw new AuthenticationError('You need to be logged in!');
     },
+
+        // await Product.findByIdAndUpdate(
+        //   { _id: productId },
+        //   {
+        //     $push: {
+        //       movieComments: {
+        //         movieCommentText: movieCommentText,
+        //         productId: productId
+        //       },
+        //     },
+        //   },
+        //   { new: true }
+        // );
+
     updateUser: async (parent, args, context) => {
       if (context.user) {
         return await User.findByIdAndUpdate(context.user._id, args, {

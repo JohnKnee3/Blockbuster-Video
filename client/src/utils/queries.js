@@ -17,6 +17,23 @@ export const QUERY_PRODUCTS = gql`
         movieCommentText
         createdAt
         username
+        productId
+      }
+    }
+  }
+`;
+
+export const QUERY_ONE_PRODUCT = gql`
+  query product($id: ID!) {
+    product(_id: $id) {
+      _id
+      name
+      movieComments {
+        _id
+        movieCommentText
+        createdAt
+        username
+        productId
       }
     }
   }
@@ -69,12 +86,6 @@ export const QUERY_USER = gql`
   }
 `;
 
-// movieComment {
-//   _id
-//   movieCommentText
-//   createdAt
-// }
-
 export const QUERY_MOVIE_COMMENT = gql`
   query movieComment($movieCommentText: String) {
     movieComment(movieCommentText: $movieCommentText) {
@@ -82,6 +93,7 @@ export const QUERY_MOVIE_COMMENT = gql`
       movieCommentText
       createdAt
       username
+      productId
     }
   }
 `;

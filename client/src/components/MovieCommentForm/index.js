@@ -2,7 +2,8 @@ import React, { useEffect, useState } from "react";
 import { useMutation } from '@apollo/react-hooks';
 import { ADD_MOVIE_COMMENT } from "../../utils/mutations";
 
-function MovieCommentForm() {
+function MovieCommentForm(id) {
+    const productId = id.id;
     const [formState, setFormState] = useState({ movieCommentText:'' });
     const [characterCount, setCharacterCount] = useState(0);
 
@@ -13,9 +14,11 @@ function MovieCommentForm() {
         try {
             const mutationResponse = await addMovieComment({
                 variables: {
-                    movieCommentText: formState.movieCommentText
+                    movieCommentText: formState.movieCommentText,
+                    productId: productId
                 }
             });
+
             // clear form value
             setFormState('');
             setCharacterCount(0);

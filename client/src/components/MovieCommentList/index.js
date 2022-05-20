@@ -1,28 +1,30 @@
 import React from 'react';
+import { useParams } from 'react-router-dom';
 import { useQuery } from "@apollo/react-hooks";
 
-import { QUERY_MOVIE_COMMENT } from '../../utils/queries';
+import { QUERY_ONE_PRODUCT } from '../../utils/queries';
 
 function MovieCommentList () {
-    const { data } = useQuery(QUERY_MOVIE_COMMENT);
-    const comments = data?.movieComment || {};
-    
+    const {id: productId} = useParams();
+    const { data } = useQuery(QUERY_ONE_PRODUCT, {
+        variables: { id: productId }
+    });
+
+    const comments = data?.product.movieComments || {};
     if (!comments.length) {
       return <h3>No Comments Yet</h3>;
     }
-  
     return (
         <div>
             {comments &&
                 comments.map((comments) => (
                 <div key={comments._id} className="card mb-3">
-                    <p className="card-header">
-                        {comments.username}
-                        comments on {comments.createdAt}
-                    </p>
-                    <div className="card-body">
-                    <p>{comments.movieCommentText}</p>
+                    <div >
+                        <p>{comments.movieCommentText}</p>
                     </div>
+                        <p>
+                            {comments.username}, {comments.createdAt}
+                        </p>
                 </div>
                 ))}
         </div>
