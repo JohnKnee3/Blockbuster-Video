@@ -147,7 +147,8 @@ const resolvers = {
     //   throw new AuthenticationError("You need to be logged in!");
     // },
     addMovieComment: async (parent, { ...args }, context) => {
-      console.log(args);
+      console.log("I am args", args);
+      console.log("I am {...args}", { ...args });
       if (context.user) {
         const comment = await MovieComment.create({
           productId: args.productId,
@@ -165,6 +166,41 @@ const resolvers = {
           { new: true }
         );
         return comment;
+      }
+      throw new AuthenticationError("You need to be logged in!");
+    },
+    // //This works but deleteMovie comment seems to do the same in less code
+    // removeMovieComment: async (parent, args, context) => {
+    //   if (context.user) {
+    //     const updatedProduct = await Product.findOneAndUpdate(
+    //       { _id: args.productId },
+    //       { $pull: { movieComments: args._id } },
+    //       { new: true }
+    //     );
+    //     await MovieComment.findOneAndDelete({
+    //       _id: args._id,
+    //     });
+    //     return updatedProduct;
+    //   }
+    //   throw new AuthenticationError("You need to be logged in!");
+    // },
+    deleteMovieComment: async (parent, args, context) => {
+      if (context.user) {
+        const updatedMovieComment = await MovieComment.findOneAndDelete({
+          _id: args._id,
+        });
+        return updatedMovieComment;
+      }
+      throw new AuthenticationError("You need to be logged in!");
+    },
+    updateMovieComment: async (parent, args, context) => {
+      if (context.user) {
+        const updatedMovieComment = await MovieComment.findOneAndUpdate(
+          { _id: args._id },
+          { movieCommentText: args.movieCommentText },
+          { new: true }
+        );
+        return updatedMovieComment;
       }
       throw new AuthenticationError("You need to be logged in!");
     },
