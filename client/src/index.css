@@ -91,6 +91,14 @@ header {
 header a {
   color: var(--light);
 }
+footer {
+  background-color: var(--primary);
+  /* color: var(--secondary); */
+  width: 100%;
+}
+.footer {
+  color: var(--secondary);
+}
 
 button {
   font-size: 1rem;
