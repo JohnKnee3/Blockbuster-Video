@@ -106,14 +106,14 @@ const About = () => {
       </div>
       <div className="need-space">
         <h2 className="text-center">Blockbuster VHS...</h2>
+      </div>
+      <div className="need-space">
+        <h2 className="text-center">On Demand!!!</h2>
         <img
           className="logo-center"
           alt="Blockbuster VHS Case"
           src={`/images/VHS-Case.jpeg`}
         />
-      </div>
-      <div className="need-space">
-        <h2 className="text-center">On Demand!!!</h2>
       </div>
       <div className="need-space"></div>
       <div className="row">
