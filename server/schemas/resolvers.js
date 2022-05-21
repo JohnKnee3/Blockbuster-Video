@@ -24,10 +24,14 @@ const resolvers = {
         };
       }
 
-      return await Product.find(params).populate("categories").populate("movieComments");
+      return await Product.find(params)
+        .populate("categories")
+        .populate("movieComments");
     },
     product: async (parent, { _id }) => {
-      return await Product.findById(_id).populate("categories").populate("movieComments");
+      return await Product.findById(_id)
+        .populate("categories")
+        .populate("movieComments");
     },
     user: async (parent, args, context) => {
       if (context.user) {
@@ -57,7 +61,7 @@ const resolvers = {
     },
     movieComment: async (parent, { username }) => {
       const params = username ? { username } : {};
-      return MovieComment. find(params).sort({ createdAt: -1 });
+      return MovieComment.find(params).sort({ createdAt: -1 });
     },
     checkout: async (parent, args, context) => {
       const url = new URL(context.headers.referer).origin;
@@ -130,7 +134,7 @@ const resolvers = {
     //           movieComments: {
     //             movieCommentText,
     //             username: context.user.username,
-    //             productId: 
+    //             productId:
     //           },
     //         },
     //       },
@@ -143,36 +147,40 @@ const resolvers = {
     //   throw new AuthenticationError("You need to be logged in!");
     // },
     addMovieComment: async (parent, { ...args }, context) => {
-      console.log(args)
+      console.log(args);
       if (context.user) {
-        const comment = await MovieComment.create(
-          { productId:args.productId, movieCommentText: args.movieCommentText, username: context.user.username });
-        
-        await Product.findByIdAndUpdate(args.productId,
+        const comment = await MovieComment.create({
+          productId: args.productId,
+          movieCommentText: args.movieCommentText,
+          username: context.user.username,
+        });
+
+        await Product.findByIdAndUpdate(
+          args.productId,
           {
             $push: {
-              movieComments: comment
-            }
+              movieComments: comment,
+            },
           },
           { new: true }
-        )
+        );
         return comment;
       }
-      throw new AuthenticationError('You need to be logged in!');
+      throw new AuthenticationError("You need to be logged in!");
     },
 
-        // await Product.findByIdAndUpdate(
-        //   { _id: productId },
-        //   {
-        //     $push: {
-        //       movieComments: {
-        //         movieCommentText: movieCommentText,
-        //         productId: productId
-        //       },
-        //     },
-        //   },
-        //   { new: true }
-        // );
+    // await Product.findByIdAndUpdate(
+    //   { _id: productId },
+    //   {
+    //     $push: {
+    //       movieComments: {
+    //         movieCommentText: movieCommentText,
+    //         productId: productId
+    //       },
+    //     },
+    //   },
+    //   { new: true }
+    // );
 
     updateUser: async (parent, args, context) => {
       if (context.user) {
