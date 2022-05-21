@@ -69,3 +69,19 @@ export const ADD_MOVIE_COMMENT = gql`
     }
   }
 `;
+
+export const DELETE_MOVIE_COMMENT = gql`
+  mutation deleteMovieComment(
+    $_id: ID!
+  ) {
+    deleteMovieComment(
+      _id: $_id
+    ) {
+      _id
+      movieCommentText
+      createdAt
+      username
+      productId
+    }
+  }
+`;

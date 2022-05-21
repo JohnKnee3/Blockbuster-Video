@@ -1,18 +1,21 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useMutation } from '@apollo/react-hooks';
 import { ADD_MOVIE_COMMENT } from "../../utils/mutations";
 
 function MovieCommentForm(id) {
+    // get a productId from the detail page
     const productId = id.id;
+    // set state for movieCommentText
     const [formState, setFormState] = useState({ movieCommentText:'' });
     const [characterCount, setCharacterCount] = useState(0);
 
+    // create mutation to excute the ADD_MOVIE_COMMENT mutation
     const [addMovieComment] = useMutation(ADD_MOVIE_COMMENT);
     
-    const handleFormSubmit = async event => {
-        // add a comment
+    // create function that accepts the productId value as param and add the movieCommentText from the database
+    const handleFormSubmit = async () => {
         try {
-            const mutationResponse = await addMovieComment({
+            await addMovieComment({
                 variables: {
                     movieCommentText: formState.movieCommentText,
                     productId: productId
@@ -22,12 +25,13 @@ function MovieCommentForm(id) {
             // clear form value
             setFormState('');
             setCharacterCount(0);
-        } catch (e) {
+                        
+        } catch (e) {   
+            console.error(e);
         }
     };
     
     const handleChange = event => {
-        console.log("handleChange" + event.target.value);
         if (event.target.value.length <= 280) {
             const { name, value } = event.target;
             setFormState({
