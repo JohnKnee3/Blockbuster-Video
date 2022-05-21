@@ -12,7 +12,7 @@ function MovieCommentList() {
 
   // work on getting username from user
   const { data: userData } = useQuery(QUERY_USER);
-  console.log("I am {data: userData}", { data: userData });
+  // console.log("I am {data: userData}", { data: userData });
 
   let username;
 
@@ -62,27 +62,33 @@ function MovieCommentList() {
   return (
     <div>
       {comments &&
-        comments.map((comments) => (
-          <div key={comments._id} className="card mb-3">
-            <div key={comments._id}>
-              <p> {comments.movieCommentText}</p>
-              <p>
-                {" "}
-                {comments.username},{comments.createdAt}
-              </p>
-              {Auth.loggedIn() ? (
-                <>
-                  <button>Edit</button>
-                  <button onClick={() => handleDeleteComment(comments._id)}>
-                    Delete
-                  </button>
-                </>
-              ) : (
-                <></>
-              )}
-            </div>
-          </div>
-        ))}
+        comments.map(
+          (comments) => (
+            console.log("I am comments", comments),
+            console.log("I am cooments.username", comments.username),
+            (
+              <div key={comments._id} className="card mb-3">
+                <div key={comments._id}>
+                  <p> {comments.movieCommentText}</p>
+                  <p>
+                    {" "}
+                    {comments.username},{comments.createdAt}
+                  </p>
+                  {username === comments.username ? (
+                    <>
+                      <button>Edit</button>
+                      <button onClick={() => handleDeleteComment(comments._id)}>
+                        Delete
+                      </button>
+                    </>
+                  ) : (
+                    <></>
+                  )}
+                </div>
+              </div>
+            )
+          )
+        )}
     </div>
   );
 }
