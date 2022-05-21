@@ -13,7 +13,7 @@ function MovieCommentList () {
     // create mutation to excute the DELETE_MOVIE_COMMENT mutation
     const [deleteMovieComment] = useMutation(DELETE_MOVIE_COMMENT);
     
-    // use useQuery to excute the ONE_PRODUCT query with a productId
+    // use useQuery to excute the ONE_PRODUCT query
     const { data } = useQuery(QUERY_ONE_PRODUCT, {
         variables: { id: productId }
     });
@@ -41,8 +41,6 @@ function MovieCommentList () {
         } catch (e) {     
             console.error(e);
         }
-
-        window.location.reload();
     };
 
     if (!comments.length) {
