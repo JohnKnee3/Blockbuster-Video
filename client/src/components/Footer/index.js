@@ -2,8 +2,8 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <footer className="need-less-space">
-      <div className="px-2 py-1 text-center ">
+    <footer>
+      <div className="px-2 py-1 text-center need-less-space">
         <span className="footer">
           &copy;{new Date().getFullYear()} by{" "}
           <a

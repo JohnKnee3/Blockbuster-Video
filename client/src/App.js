@@ -46,7 +46,7 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <Router>
-        <div className="wrap-footer">
+        <div>
           <ScrollToTop>
             <StoreProvider>
               <Nav />
