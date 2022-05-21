@@ -7,11 +7,17 @@ import { QUERY_USER } from "../utils/queries";
 function OrderHistory() {
   const { data } = useQuery(QUERY_USER);
   console.log("I am {data}", { data });
-  let user;
 
+  let user;
+  // console.log("I am outside user", user);
+  let username;
+  // console.log("I am username", username);
   if (data) {
+    // console.log("I am data.user.username", data.user.username);
     user = data.user;
-    console.log("I am user", user);
+    username = data.user.username;
+    console.log("I am inside username", username);
+    console.log("I am inside user", user);
   }
 
   return (
