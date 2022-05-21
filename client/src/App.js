@@ -16,7 +16,6 @@ import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import About from "./pages/About";
 import Nav from "./components/Nav";
-import Footer from "./components/Footer";
 import OrderHistory from "./pages/OrderHistory";
 import Success from "./pages/Success";
 
@@ -60,7 +59,6 @@ function App() {
                 <Route exact path="/success" component={Success} />
                 <Route component={NoMatch} />
               </Switch>
-              <Footer />
             </StoreProvider>
           </ScrollToTop>
         </div>

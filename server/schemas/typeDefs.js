@@ -71,8 +71,6 @@ const typeDefs = gql`
     ): Auth
     addOrder(products: [ID]!): Order
     addMovieComment(movieCommentText: String!, productId: String): MovieComment
-    deleteMovieComment(_id: ID!): MovieComment
-    updateMovieComment(_id: ID!, movieCommentText: String!): MovieComment
     updateUser(
       username: String
       firstName: String
@@ -86,6 +84,3 @@ const typeDefs = gql`
 `;
 
 module.exports = typeDefs;
-
-//Keeping just in case you need this one back
-// removeMovieComment(_id: ID!, productId: ID!): Product
