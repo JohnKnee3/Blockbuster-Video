@@ -19,11 +19,11 @@ const productSchema = new Schema({
     required: true,
     min: 0.99,
   },
-  // quantity: {
-  //   type: Number,
-  //   min: 0,
-  //   default: 0,
-  // },
+  quantity: {
+    type: Number,
+    min: 0,
+    default: 0,
+  },
   categories: [
     {
       type: Schema.Types.ObjectId,
@@ -35,8 +35,8 @@ const productSchema = new Schema({
     {
       type: Schema.Types.ObjectId,
       ref: "MovieComment",
-    },
-  ],
+    }
+  ]
 });
 
 const Product = mongoose.model("Product", productSchema);

@@ -207,7 +207,7 @@ input:focus {
   /* margin-top: calc(-1 * var(--bs-gutter-y));
   margin-right: calc(-0.5 * var(--bs-gutter-x));
   margin-left: calc(-0.5 * var(--bs-gutter-x)); */
-  margin-top: 22rem;
+  margin-top: 10rem;
 }
 
 .col {
@@ -234,7 +234,7 @@ input:focus {
   background-color: #ff8a0040;
 } */
 .need-space {
-  margin-top: 30rem;
+  margin-top: 20rem;
 }
 .need-lil-less-space {
   margin-top: 10rem;
