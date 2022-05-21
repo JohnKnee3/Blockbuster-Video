@@ -57,7 +57,7 @@ const About = () => {
         <div className="col">
           <img
             className="about-image"
-            alt="customer making a purchase at a farmers market"
+            alt="person meditating"
             src={`/images/farmers-market.jpeg`}
           />
         </div>
@@ -84,7 +84,7 @@ const About = () => {
         <div className="col">
           <img
             className="about-image"
-            alt="woman eating avocado toast, drinking a smoothie and listening to a record player"
+            alt="woman reading a book"
             src={`/images/hip-things.jpeg`}
           />
         </div>
@@ -93,7 +93,7 @@ const About = () => {
         <div className="col">
           <img
             className="about-image"
-            alt="man with flowers in his beard"
+            alt="person meditating"
             src={`/images/we-hip.jpeg`}
           />
         </div>
@@ -111,7 +111,7 @@ const About = () => {
         <h2 className="text-center">On Demand!!!</h2>
         <img
           className="logo-center"
-          alt="Blockbuster VHS Case"
+          alt="Blockbuster Logo"
           src={`/images/VHS-Case.jpeg`}
         />
       </div>
@@ -125,7 +125,7 @@ const About = () => {
         <div className="col">
           <img
             className="about-image"
-            alt="woman shopping on a computer"
+            alt="woman reading a book"
             src={`/images/place-order.jpeg`}
           />
         </div>
@@ -134,7 +134,7 @@ const About = () => {
         <div className="col">
           <img
             className="about-image"
-            alt="abandoned Blockbuster Video"
+            alt="person meditating"
             src={`/images/store-location.jpeg`}
           />
         </div>
@@ -152,7 +152,7 @@ const About = () => {
         <div className="col">
           <img
             className="about-image"
-            alt="man with a blockbuster VHS standing in front of a white van"
+            alt="woman reading a book"
             src={`/images/store-pickup.jpg`}
           />
         </div>
@@ -161,7 +161,7 @@ const About = () => {
         <div className="col">
           <img
             className="about-image"
-            alt="people running scared with their Blockbuster VHS in hand"
+            alt="person meditating"
             src={`/images/running-home.jpg`}
           />
         </div>
@@ -176,7 +176,7 @@ const About = () => {
         <div className="col">
           <img
             className="about-image"
-            alt="Family watching a movie."
+            alt="woman reading a book"
             src={`/images/watch-movie.jpeg`}
           />
         </div>

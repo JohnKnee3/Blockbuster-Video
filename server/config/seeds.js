@@ -21,20 +21,9 @@ db.once("open", async () => {
 
   const moviecomments = await MovieComment.insertMany([
     {
-      movieCommentText: "The VHS quality makes the dance scene a banger!!",
+      movieCommentText: "This is a test",
       username: "Moozle",
-      createdAt: "2022-05-19T20:55:30.509Z",
-    },
-    {
-      movieCommentText: "c'est la vie say the old folks.",
-      username: "MirMir",
-      createdAt: "2022-05-19T21:12:30.509Z",
-    },
-    {
-      movieCommentText:
-        "I am so glad Blockbuster has added this film to their VHS collection.",
-      username: "Moozle",
-      createdAt: "2022-05-20T18:20:30.509Z",
+      // productId: products[0]._id,
     },
   ]);
 
@@ -49,7 +38,7 @@ db.once("open", async () => {
         "The lives of two mob hitmen, a boxer, a gangster and his wife, and a pair of diner bandits intertwine in four tales of violence and redemption.",
       image: "pulp-fiction.jpg",
       categories: [categories[0]._id, categories[2]._id, categories[7]._id],
-      movieComments: [moviecomments[0]._id, moviecomments[1]._id],
+      movieComments: [moviecomments[0]._id],
       price: 44.99,
     },
     {
@@ -137,7 +126,6 @@ db.once("open", async () => {
       categories: [categories[0]._id, categories[4]._id, categories[7]._id],
       description:
         "A linguist works with the military to communicate with alien lifeforms after twelve mysterious spacecraft appear around the world.",
-      movieComments: [moviecomments[2]._id],
       image: "arrival.jpg",
       price: 59.99,
     },
@@ -213,7 +201,7 @@ db.once("open", async () => {
     password: "123456",
     orders: [
       {
-        products: [products[0]._id, products[1]._id],
+        products: [products[0]._id, products[0]._id, products[1]._id],
       },
     ],
   });
