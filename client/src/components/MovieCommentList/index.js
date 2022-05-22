@@ -46,6 +46,15 @@ function MovieCommentList() {
 
   // set state for editmode
   const [editState, setEditState] = useState(false);
+  //   console.log("I am editState", editState);
+
+  //the text of the comment when the edit button is clicked
+  const [commentTextState, setCommentTextState] = useState();
+  console.log("I am commentTextState", commentTextState);
+
+  //the id of the comment when the edit button is clicked
+  const [commentIdState, setCommentIdState] = useState();
+  console.log("I am commentIdState", commentIdState);
 
   // create function that accepts the commentId value as param and delete the movieCommentText from the database
   const handleDeleteComment = async (_id) => {
@@ -70,19 +79,19 @@ function MovieCommentList() {
     window.location.reload();
   };
 
-  let currentCommentId;
-  console.log("I am outer currentCommentId", currentCommentId);
-  let currentCommentText;
+  //   let currentCommentId;
+  //   //   console.log("I am outer currentCommentId", currentCommentId);
+  //   let currentCommentText;
 
-  const currentComment = (_id, movieCommentText) => {
-    currentCommentId = _id;
-    currentCommentText = movieCommentText;
+  //   const currentComment = (_id, movieCommentText) => {
+  //     currentCommentId = _id;
+  //     currentCommentText = movieCommentText;
 
-    console.log("current comment id", currentCommentId);
-    console.log("current comment text", currentCommentText);
+  //     console.log("current comment id", currentCommentId);
+  //     console.log("current comment text", currentCommentText);
 
-    // renderEditForm(currentCommentId, currentCommentText)
-  };
+  //     // renderEditForm(currentCommentId, currentCommentText)
+  //   };
 
   // create function that accepts the movieComment id value as param and update the movieCommentText from the database
   const handleUpdateComment = async (currentCommentId) => {
@@ -122,8 +131,10 @@ function MovieCommentList() {
   };
   //create function that render comment edit form
   const renderEditForm = () => {
-    console.log("I am currentCommentId inner", currentCommentId);
-    console.log("I am currentCommentText inner", currentCommentText);
+    // console.log("I am currentCommentId inner", currentCommentId);
+    // console.log("I am currentCommentText inner", currentCommentText);
+    console.log("I am commentIdState in the function", commentIdState);
+    console.log("I am commentTextState in the function", commentTextState);
     return (
       <div>
         <p className={`m-0 ${characterCount === 280 ? "text-error" : ""}`}>
@@ -133,15 +144,15 @@ function MovieCommentList() {
           <textarea
             required
             name="updatedCommentText"
-            placeholder={currentCommentText}
+            // placeholder={commentTextState}
             onChange={handleChange}
           >
-            {currentCommentText}
+            {commentTextState}
           </textarea>
           <button
             id="submit"
             type="submit"
-            onClick={() => handleUpdateComment(currentCommentId)}
+            onClick={() => handleUpdateComment(commentIdState)}
           >
             Done
           </button>
@@ -196,8 +207,10 @@ function MovieCommentList() {
                   <>
                     <button
                       onClick={() => {
+                        setCommentIdState(comment._id);
+                        setCommentTextState(comment.movieCommentText);
+                        // currentComment(comment._id, comment.movieCommentText);
                         setEditState(true);
-                        currentComment(comment._id, comment.movieCommentText);
                       }}
                     >
                       Edit
@@ -209,7 +222,16 @@ function MovieCommentList() {
                 )}
                 {username === "Admin" && (
                   <>
-                    <button>Edit</button>
+                    <button
+                      onClick={() => {
+                        setCommentIdState(comment._id);
+                        setCommentTextState(comment.movieCommentText);
+                        // currentComment(comment._id, comment.movieCommentText);
+                        setEditState(true);
+                      }}
+                    >
+                      Edit
+                    </button>
                     <button onClick={() => handleDeleteComment(comment._id)}>
                       Delete
                     </button>
