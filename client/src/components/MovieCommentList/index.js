@@ -74,15 +74,21 @@ function MovieCommentList() {
                     {" "}
                     {comments.username},{comments.createdAt}
                   </p>
-                  {username === comments.username ? (
+                  {username === comments.username && (
                     <>
                       <button>Edit</button>
                       <button onClick={() => handleDeleteComment(comments._id)}>
                         Delete
                       </button>
                     </>
-                  ) : (
-                    <></>
+                  )}
+                  {username === "Admin" && (
+                    <>
+                      <button>Edit</button>
+                      <button onClick={() => handleDeleteComment(comments._id)}>
+                        Delete
+                      </button>
+                    </>
                   )}
                 </div>
               </div>
