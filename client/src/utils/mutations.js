@@ -85,3 +85,21 @@ export const DELETE_MOVIE_COMMENT = gql`
     }
   }
 `;
+
+export const UPDATE_MOVIE_COMMENT = gql`
+  mutation updateMovieComment(
+    $_id: ID!
+    $movieCommentText: String!
+  ) {
+    updateMovieComment(
+      _id: $_id
+      movieCommentText: $movieCommentText
+    ) {
+      _id
+      movieCommentText
+      createdAt
+      username
+      productId
+    }
+  }
+`

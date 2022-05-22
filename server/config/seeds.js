@@ -227,10 +227,10 @@ db.once("open", async () => {
   });
 
   await User.create({
-    firstName: "Princess",
-    lastName: "Leia",
+    firstName: "Admin",
+    lastName: "Account",
     username: "Admin",
-    email: "leia@yahoo.com",
+    email: "admin@yahoo.com",
     password: "123456",
   });
 
