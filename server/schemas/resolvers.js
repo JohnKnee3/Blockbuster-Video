@@ -194,9 +194,9 @@ const resolvers = {
       throw new AuthenticationError("You need to be logged in!");
     },
     updateMovieComment: async (parent, args, context) => {
+      console.log(args._id);
       if (context.user) {
-        const updatedMovieComment = await MovieComment.findOneAndUpdate(
-          { _id: args._id },
+        const updatedMovieComment = await MovieComment.findOneAndUpdate(args._id,
           { movieCommentText: args.movieCommentText },
           { new: true }
         );
