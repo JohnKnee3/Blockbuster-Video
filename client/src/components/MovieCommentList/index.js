@@ -135,6 +135,7 @@ function MovieCommentList() {
     // console.log("I am currentCommentText inner", currentCommentText);
     console.log("I am commentIdState in the function", commentIdState);
     console.log("I am commentTextState in the function", commentTextState);
+
     return (
       <div>
         <p className={`m-0 ${characterCount === 280 ? "text-error" : ""}`}>
