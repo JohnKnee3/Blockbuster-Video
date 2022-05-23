@@ -98,7 +98,7 @@ db.once("open", async () => {
       createdAt: "2022-05-20T17:32:30.509Z",
     },
     {
-      movieCommentText: "The VHS really adds to this films vibe",
+      movieCommentText: "The VHS quality really adds to this films vibe",
       username: "Vio",
       createdAt: "2022-05-19T16:32:30.509Z",
     },

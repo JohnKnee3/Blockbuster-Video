@@ -13,8 +13,8 @@ const About = () => {
       />
 
       <p className="text-center">
-        I know you missed us and are even like man where have you been? Well let
-        us tell you...
+        I know you missed us and are like man where have you been? Well let us
+        tell you...
       </p>
 
       <div className="row">
@@ -140,8 +140,8 @@ const About = () => {
         </div>
         <div className="col text-center">
           <p className="text-right">
-            Go to where your Blockbuster used to be. <br />
-            Don't worry about how we know where you live.
+            Go to where your Blockbuster used to be.
+            {/* <br />Don't worry about how we know where you live. */}
           </p>
         </div>
       </div>
@@ -166,7 +166,7 @@ const About = () => {
           />
         </div>
         <div className="col text-center">
-          <p className="text-right">Take your Custom Blockbuster VHS home.</p>
+          <p className="text-right">Take your Blockbuster VHS home.</p>
         </div>
       </div>
       <div className="row">
