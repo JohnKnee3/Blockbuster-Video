@@ -202,6 +202,76 @@ db.once("open", async () => {
       username: "Vio",
       createdAt: "2022-05-21T15:22:30.509Z",
     },
+    {
+      movieCommentText: "Everything is awesome!!!!",
+      username: "Moozle",
+      createdAt: "2022-05-21T15:22:30.509Z",
+    },
+    {
+      movieCommentText: "Wrong movie Molly.",
+      username: "MirMir",
+      createdAt: "2022-05-21T15:30:42.509Z",
+    },
+    {
+      movieCommentText: "Don't out my secret identity.",
+      username: "Moozle",
+      createdAt: "2022-05-21T15:51:42.509Z",
+    },
+    {
+      movieCommentText: "I love the outdoors.",
+      username: "Vio",
+      createdAt: "2022-05-20T15:50:42.509Z",
+    },
+    {
+      movieCommentText: "Spider-Ham is the best.",
+      username: "Vio",
+      createdAt: "2022-05-20T15:48:42.509Z",
+    },
+    {
+      movieCommentText: "This classic back in the format it should be in",
+      username: "MirMir",
+      createdAt: "2022-05-21T16:41:42.509Z",
+    },
+    {
+      movieCommentText: "This film is really cute.",
+      username: "Vio",
+      createdAt: "2022-05-21T16:41:42.509Z",
+    },
+    {
+      movieCommentText: "Get it while it's cheap.",
+      username: "Moozle",
+      createdAt: "2022-05-21T16:53:42.509Z",
+    },
+    {
+      movieCommentText: "Oh snap, evil Superman",
+      username: "Moozle",
+      createdAt: "2022-05-21T16:53:42.509Z",
+    },
+    {
+      movieCommentText: "Everybody floats!!",
+      username: "Moozle",
+      createdAt: "2022-05-22T15:41:42.509Z",
+    },
+    {
+      movieCommentText: "Not me, I hate water!!",
+      username: "MirMir",
+      createdAt: "2022-05-22T15:47:42.509Z",
+    },
+    {
+      movieCommentText: "Is this a sports moive?",
+      username: "Vio",
+      createdAt: "2022-05-22T15:11:42.509Z",
+    },
+    {
+      movieCommentText: "/sigh",
+      username: "MirMir",
+      createdAt: "2022-05-22T15:21:42.509Z",
+    },
+    {
+      movieCommentText: "Absolute must buy.",
+      username: "MirMir",
+      createdAt: "2022-05-22T14:14:42.509Z",
+    },
   ]);
 
   console.log("moviecomments seeded");
@@ -604,17 +674,123 @@ db.once("open", async () => {
     },
     {
       name: "The Bad Guys",
-      categories: [
-        categories[0]._id,
-        categories[2]._id,
-        categories[5]._id,
-        categories[7]._id,
-      ],
+      categories: [categories[2]._id, categories[5]._id, categories[7]._id],
       movieComments: [moviecomments[35]._id],
       description:
         "Several reformed yet misunderstood criminal animals attempt to become good, with some disastrous results along the way.",
       image: "the-bad-guys.jpg",
       price: 34.99,
+    },
+    {
+      name: "The Lego Batman Movie",
+      categories: [
+        categories[1]._id,
+        categories[2]._id,
+        categories[5]._id,
+        categories[7]._id,
+      ],
+      movieComments: [
+        moviecomments[36]._id,
+        moviecomments[37]._id,
+        moviecomments[38]._id,
+      ],
+      description:
+        "A cooler-than-ever Bruce Wayne must deal with the usual suspects as they plan to rule Gotham City, while discovering that he has accidentally adopted a teenage orphan who wishes to become his sidekick.",
+      image: "the-lego-batman-movie.jpg",
+      price: 33.99,
+    },
+    {
+      name: "FernGully: The Last Rainforest",
+      categories: [categories[5]._id, categories[7]._id],
+      movieComments: [moviecomments[39]._id],
+      description:
+        "The magical inhabitants of a rainforest fight to save their home, which is threatened by logging and a polluting force of destruction called Hexxus.",
+      image: "ferngully.jpg",
+      price: 45.99,
+    },
+    {
+      name: "Spider-Man: Into the Spider-Verse",
+      categories: [
+        categories[1]._id,
+        categories[4]._id,
+        categories[5]._id,
+        categories[7]._id,
+      ],
+      movieComments: [moviecomments[40]._id],
+      description:
+        "Teen Miles Morales becomes the Spider-Man of his universe, and must join with five spider-powered individuals from other dimensions to stop a threat for all realities.",
+      image: "spider-man-into-the-spider-verse.jpg",
+      price: 59.99,
+    },
+    {
+      name: "Alien",
+      categories: [categories[3]._id, categories[4]._id, categories[7]._id],
+      movieComments: [moviecomments[41]._id],
+      description:
+        "The crew of a commercial spacecraft encounter a deadly lifeform after investigating an unknown transmission.",
+      image: "alien.jpg",
+      price: 29.99,
+    },
+    {
+      name: "Spontaneous",
+      categories: [
+        categories[0]._id,
+        categories[2]._id,
+        categories[3]._id,
+        categories[6]._id,
+        categories[7]._id,
+      ],
+      movieComments: [moviecomments[42]._id, moviecomments[43]._id],
+      description:
+        "Get ready for the outrageous coming-of-age love story about growing up...and blowing up. When students in their school begin exploding (literally), seniors Mara and Dylan struggle to survive in a world where each moment may be their last.",
+      image: "spontaneous.jpg",
+      price: 9.99,
+    },
+    {
+      name: "Brightburn",
+      categories: [categories[0]._id, categories[3]._id, categories[7]._id],
+      movieComments: [moviecomments[44]._id],
+      description:
+        "What if a child from another world crash-landed on Earth, but instead of becoming a hero to mankind, he proved to be something far more sinister?",
+      image: "brightburn.jpg",
+      price: 39.99,
+    },
+    {
+      name: "It",
+      categories: [categories[3]._id, categories[7]._id],
+      movieComments: [moviecomments[45]._id, moviecomments[46]._id],
+      description:
+        "In the summer of 1989, a group of bullied kids band together to destroy a shape-shifting monster, which disguises itself as a clown and preys on the children of Derry, their small Maine town.",
+      image: "it.jpg",
+      price: 41.99,
+    },
+    {
+      name: "Silver Linings Playbook",
+      categories: [
+        categories[0]._id,
+        categories[2]._id,
+        categories[6]._id,
+        categories[7]._id,
+      ],
+      movieComments: [moviecomments[47]._id, moviecomments[48]._id],
+      description:
+        "After a stint in a mental institution, former teacher Pat Solitano moves back in with his parents and tries to reconcile with his ex-wife. Things get more challenging when Pat meets Tiffany, a mysterious girl with problems of her own.",
+      image: "silver-linings-playbook.jpg",
+      price: 32.99,
+    },
+    {
+      name: "La La Land",
+      categories: [
+        categories[0]._id,
+        categories[2]._id,
+        categories[6]._id,
+        categories[7]._id,
+      ],
+      movieComments: [moviecomments[49]._id],
+      description:
+        "While navigating their careers in Los Angeles, a pianist and an actress fall in love while attempting to reconcile their aspirations for the future.",
+      image: "la-la-land.jpg",
+      price: 54.99,
     },
   ]);
 
