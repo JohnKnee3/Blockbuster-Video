@@ -49,12 +49,12 @@ db.once("open", async () => {
     },
     {
       movieCommentText: "You've lost that looooving feeeeling.",
-      username: "Molly",
+      username: "Moozle",
       createdAt: "2022-05-20T17:45:30.509Z",
     },
     {
       movieCommentText: "This will be so much better in VHS than in theaters.",
-      username: "Molly",
+      username: "Moozle",
       createdAt: "2022-05-21T18:45:30.509Z",
     },
     {
@@ -79,12 +79,12 @@ db.once("open", async () => {
     },
     {
       movieCommentText: "You do love to burrow.",
-      username: "Molly",
+      username: "Moozle",
       createdAt: "2022-05-20T18:42:30.509Z",
     },
     {
       movieCommentText: "I just can't wait to be kiiiinnng!!",
-      username: "Molly",
+      username: "Moozle",
       createdAt: "2022-05-21T18:42:30.509Z",
     },
     {
@@ -104,7 +104,7 @@ db.once("open", async () => {
     },
     {
       movieCommentText: "Oh for sure",
-      username: "Molly",
+      username: "Moozle",
       createdAt: "2022-05-19T17:12:30.509Z",
     },
     {
@@ -116,6 +116,91 @@ db.once("open", async () => {
       movieCommentText: "Yes Blockbuster has this one now!!",
       username: "MirMir",
       createdAt: "2022-05-23T17:12:30.509Z",
+    },
+    {
+      movieCommentText: "I'm just as fast love love!!",
+      username: "Vio",
+      createdAt: "2022-05-22T16:12:30.509Z",
+    },
+    {
+      movieCommentText: "Be our guest!!",
+      username: "Moozle",
+      createdAt: "2022-05-22T16:12:30.509Z",
+    },
+    {
+      movieCommentText: "Be our guest?",
+      username: "Vio",
+      createdAt: "2022-05-22T16:21:30.509Z",
+    },
+    {
+      movieCommentText: "Be our natural request!!",
+      username: "Moozle",
+      createdAt: "2022-05-22T17:11:30.509Z",
+    },
+    {
+      movieCommentText: "This movie is soooo pretty.",
+      username: "Moozle",
+      createdAt: "2022-05-21T14:12:30.509Z",
+    },
+    {
+      movieCommentText: "Classic brought back to life.",
+      username: "MirMir",
+      createdAt: "2022-05-22T14:12:30.509Z",
+    },
+    {
+      movieCommentText: "This film should get added to romance.",
+      username: "Vio",
+      createdAt: "2022-05-22T14:52:30.509Z",
+    },
+    {
+      movieCommentText: "Chicken's not vegan?",
+      username: "Moozle",
+      createdAt: "2022-05-22T14:52:30.509Z",
+    },
+    {
+      movieCommentText: "lol, such a fun movie.",
+      username: "Vio",
+      createdAt: "2022-05-22T14:59:30.509Z",
+    },
+    {
+      movieCommentText: "Does the VHS  quality save this movie?",
+      username: "Vio",
+      createdAt: "2022-05-22T15:19:30.509Z",
+    },
+    {
+      movieCommentText: "Not really.",
+      username: "MirMir",
+      createdAt: "2022-05-22T15:44:30.509Z",
+    },
+    {
+      movieCommentText: "But hey at least it's cheap.",
+      username: "Moozle",
+      createdAt: "2022-05-22T15:45:30.509Z",
+    },
+    {
+      movieCommentText: "Wait what is this movie?",
+      username: "Moozle",
+      createdAt: "2022-05-22T16:45:30.509Z",
+    },
+    {
+      movieCommentText: "I cried so hard.",
+      username: "Vio",
+      createdAt: "2022-05-22T16:45:30.509Z",
+    },
+    {
+      movieCommentText: "I scream pooped.",
+      username: "Moozle",
+      createdAt: "2022-05-22T16:47:30.509Z",
+    },
+    {
+      movieCommentText: "Such a great movie.",
+      username: "MirMir",
+      createdAt: "2022-05-21T15:41:30.509Z",
+    },
+    {
+      movieCommentText: "Love that Blockbuster got this early.",
+      username: "Vio",
+      createdAt: "2022-05-21T15:22:30.509Z",
     },
   ]);
 
@@ -402,6 +487,134 @@ db.once("open", async () => {
         "The lives of three friends, from their early school days into young adulthood, when the reality of the world they live in comes knocking.",
       image: "never-let-me-go.jpg",
       price: 24.99,
+    },
+    {
+      name: "Sonic the Hedgehog",
+      categories: [
+        categories[1]._id,
+        categories[2]._id,
+        categories[5]._id,
+        categories[7]._id,
+      ],
+      movieComments: [moviecomments[19]._id],
+      description:
+        "After discovering a small, blue, fast hedgehog, a small-town police officer must help him defeat an evil genius who wants to do experiments on him.",
+      image: "sonic-the-hedgehog.jpg",
+      price: 23.99,
+    },
+    {
+      name: "Beauty and the Beast",
+      categories: [categories[5]._id, categories[6]._id, categories[7]._id],
+      movieComments: [
+        moviecomments[20]._id,
+        moviecomments[21]._id,
+        moviecomments[22]._id,
+      ],
+      description:
+        "A selfish Prince is cursed to become a monster for the rest of his life, unless he learns to fall in love with a beautiful young woman he keeps prisoner.",
+      image: "beauty-and-the-beast.jpg",
+      price: 26.99,
+    },
+    {
+      name: "The Fall",
+      categories: [categories[0]._id, categories[7]._id],
+      movieComments: [moviecomments[23]._id],
+      description:
+        "In a hospital on the outskirts of 1920s Los Angeles, an injured stuntman begins to tell a fellow patient, a little girl with a broken arm, a fantastic story of five mythical heroes. Thanks to his fractured state of mind and her vivid imagination, the line between fiction and reality blurs as the tale advances.",
+      image: "the-fall.jpg",
+      price: 37.99,
+    },
+    {
+      name: "The Brave Little Toaster",
+      categories: [categories[5]._id, categories[7]._id],
+      movieComments: [moviecomments[24]._id],
+      description:
+        "A group of dated appliances embark on a journey to the city to find their master after being abandoned in a cabin in the woods.",
+      image: "the-brave-little-toaster.jpg",
+      price: 44.99,
+    },
+    {
+      name: "Let the Right One In",
+      categories: [categories[0]._id, categories[3]._id, categories[7]._id],
+      movieComments: [moviecomments[25]._id],
+      description:
+        "Oskar, an overlooked and bullied boy, finds love and revenge through Eli, a beautiful but peculiar girl.",
+      image: "let-the-right-one-in.jpg",
+      price: 24.99,
+    },
+    {
+      name: "Scott Pilgrim vs. the World",
+      categories: [categories[1]._id, categories[2]._id, categories[7]._id],
+      movieComments: [moviecomments[26]._id, moviecomments[27]._id],
+      description:
+        "In a magically realistic version of Toronto, a young man must defeat his new girlfriend's seven evil exes one by one in order to win her heart.",
+      image: "scott-pilgrim-vs-the-world.jpg",
+      price: 27.99,
+    },
+    {
+      name: "Eternals",
+      categories: [categories[1]._id, categories[4]._id, categories[7]._id],
+      movieComments: [
+        moviecomments[28]._id,
+        moviecomments[29]._id,
+        moviecomments[30]._id,
+      ],
+      description:
+        "The saga of the Eternals, a race of immortal beings who lived on Earth and shaped its history and civilizations.",
+      image: "eternals.jpg",
+      price: 7.99,
+    },
+    {
+      name: "Dual",
+      categories: [categories[3]._id, categories[4]._id, categories[7]._id],
+      movieComments: [moviecomments[31]._id],
+      description:
+        "A woman opts for a cloning procedure after she receives a terminal diagnosis but when she recovers her attempts to have her clone decommissioned fail, leading to a court-mandated duel to the death.",
+      image: "dual.jpg",
+      price: 25.99,
+    },
+    {
+      name: "The Time Traveler's Wife",
+      categories: [
+        categories[0]._id,
+        categories[2]._id,
+        categories[4]._id,
+        categories[6]._id,
+        categories[7]._id,
+      ],
+      movieComments: [moviecomments[32]._id, moviecomments[33]._id],
+      description:
+        "A Chicago librarian has a gene that causes him to involuntarily time travel, creating complications in his marriage.",
+      image: "the-time-travelers-wife.jpg",
+      price: 23.99,
+    },
+    {
+      name: "Her",
+      categories: [
+        categories[0]._id,
+        categories[4]._id,
+        categories[6]._id,
+        categories[7]._id,
+      ],
+      movieComments: [moviecomments[34]._id],
+      description:
+        "In a near future, a lonely writer develops an unlikely relationship with an operating system designed to meet his every need.",
+      image: "her.jpg",
+      price: 21.99,
+    },
+    {
+      name: "The Bad Guys",
+      categories: [
+        categories[0]._id,
+        categories[2]._id,
+        categories[5]._id,
+        categories[7]._id,
+      ],
+      movieComments: [moviecomments[35]._id],
+      description:
+        "Several reformed yet misunderstood criminal animals attempt to become good, with some disastrous results along the way.",
+      image: "the-bad-guys.jpg",
+      price: 34.99,
     },
   ]);
 
