@@ -36,6 +36,87 @@ db.once("open", async () => {
       username: "Moozle",
       createdAt: "2022-05-20T18:20:30.509Z",
     },
+    {
+      movieCommentText: "Best Christmas Movie EVER!!!!!",
+      username: "Vio",
+      createdAt: "2022-05-20T18:25:30.509Z",
+    },
+    {
+      movieCommentText:
+        "Tom Cruise in VHS, the way it is meant to be seen!!!!!",
+      username: "Vio",
+      createdAt: "2022-05-20T17:24:30.509Z",
+    },
+    {
+      movieCommentText: "You've lost that looooving feeeeling.",
+      username: "Molly",
+      createdAt: "2022-05-20T17:45:30.509Z",
+    },
+    {
+      movieCommentText: "This will be so much better in VHS than in theaters.",
+      username: "Molly",
+      createdAt: "2022-05-21T18:45:30.509Z",
+    },
+    {
+      movieCommentText: "So intense.",
+      username: "MirMir",
+      createdAt: "2022-05-21T18:44:30.509Z",
+    },
+    {
+      movieCommentText: "I still can't sleep near Leia anymore.",
+      username: "MirMir",
+      createdAt: "2022-05-20T18:44:30.509Z",
+    },
+    {
+      movieCommentText: "Me neither",
+      username: "Vio",
+      createdAt: "2022-05-20T18:44:30.509Z",
+    },
+    {
+      movieCommentText: "Shai HuLoove",
+      username: "Vio",
+      createdAt: "2022-05-20T18:41:30.509Z",
+    },
+    {
+      movieCommentText: "You do love to burrow.",
+      username: "Molly",
+      createdAt: "2022-05-20T18:42:30.509Z",
+    },
+    {
+      movieCommentText: "I just can't wait to be kiiiinnng!!",
+      username: "Molly",
+      createdAt: "2022-05-21T18:42:30.509Z",
+    },
+    {
+      movieCommentText: "We don't talk about Bruno.",
+      username: "MirMir",
+      createdAt: "2022-05-21T17:42:30.509Z",
+    },
+    {
+      movieCommentText: "I'm gunna wear this VHS out.",
+      username: "Vio",
+      createdAt: "2022-05-20T17:32:30.509Z",
+    },
+    {
+      movieCommentText: "The VHS really adds to this films vibe",
+      username: "Vio",
+      createdAt: "2022-05-19T16:32:30.509Z",
+    },
+    {
+      movieCommentText: "Oh for sure",
+      username: "Molly",
+      createdAt: "2022-05-19T17:12:30.509Z",
+    },
+    {
+      movieCommentText: "Vegetarianism at it's finest.",
+      username: "MirMir",
+      createdAt: "2022-05-19T17:12:30.509Z",
+    },
+    {
+      movieCommentText: "Yes Blockbuster has this one now!!",
+      username: "MirMir",
+      createdAt: "2022-05-23T17:12:30.509Z",
+    },
   ]);
 
   console.log("moviecomments seeded");
@@ -199,6 +280,129 @@ db.once("open", async () => {
       image: "before-sunset.jpg",
       price: 24.99,
     },
+    {
+      name: "Love Actually",
+      categories: [
+        categories[0]._id,
+        categories[2]._id,
+        categories[6]._id,
+        categories[7]._id,
+      ],
+      movieComments: [moviecomments[3]._id],
+      description:
+        "Follows the lives of eight very different couples in dealing with their love lives in various loosely interrelated tales all set during a frantic month before Christmas in London, England.",
+      image: "love-actually.jpg",
+      price: 21.99,
+    },
+    {
+      name: "Top Gun",
+      categories: [categories[0]._id, categories[1]._id, categories[7]._id],
+      movieComments: [moviecomments[4]._id, moviecomments[5]._id],
+      description:
+        "As students at the United States Navy's elite fighter weapons school compete to be best in the class, one daring young pilot learns a few things from a civilian instructor that are not taught in the classroom.",
+      image: "top-gun.jpg",
+      price: 21.99,
+    },
+    {
+      name: "Top Gun: Maverick",
+      categories: [categories[0]._id, categories[1]._id, categories[7]._id],
+      movieComments: [moviecomments[6]._id],
+      description:
+        "After more than thirty years of service as one of the Navy's top aviators, Pete Mitchell is where he belongs, pushing the envelope as a courageous test pilot and dodging the advancement in rank that would ground him.",
+      image: "top-gun-maverick.jpg",
+      price: 22.99,
+    },
+    {
+      name: "Get Out",
+      categories: [categories[3]._id, categories[7]._id],
+      movieComments: [moviecomments[7]._id],
+      description:
+        "A young African-American visits his white girlfriend's parents for the weekend, where his simmering uneasiness about their reception of him eventually reaches a boiling point.",
+      image: "get-out.jpg",
+      price: 21.99,
+    },
+    {
+      name: "Paranormal Activity",
+      categories: [categories[3]._id, categories[7]._id],
+      movieComments: [moviecomments[8]._id, moviecomments[9]._id],
+      description:
+        "After moving into a suburban home, a couple becomes increasingly disturbed by a nightly demonic presence.",
+      image: "paranormal-activity.jpg",
+      price: 41.99,
+    },
+    {
+      name: "Dune",
+      categories: [
+        categories[0]._id,
+        categories[1]._id,
+        categories[4]._id,
+        categories[7]._id,
+      ],
+      movieComments: [moviecomments[10]._id, moviecomments[11]._id],
+      description:
+        "A noble family becomes embroiled in a war for control over the galaxy's most valuable asset while its heir becomes troubled by visions of a dark future.",
+      image: "dune.jpg",
+      price: 44.99,
+    },
+    {
+      name: "The Lion King",
+      categories: [categories[0]._id, categories[5]._id, categories[7]._id],
+      movieComments: [moviecomments[12]._id],
+      description:
+        "After the murder of his father, a young lion prince flees his kingdom only to learn the true meaning of responsibility and bravery.",
+      image: "lion-king.jpg",
+      price: 34.99,
+    },
+    {
+      name: "Encanto",
+      categories: [categories[2]._id, categories[5]._id, categories[7]._id],
+      movieComments: [moviecomments[13]._id],
+      description:
+        "A Colombian teenage girl has to face the frustration of being the only member of her family without magical powers.",
+      image: "encanto.jpg",
+      price: 14.99,
+    },
+    {
+      name: "The Notebook",
+      categories: [categories[0]._id, categories[6]._id, categories[7]._id],
+      movieComments: [moviecomments[14]._id],
+      description:
+        "A poor yet passionate young man (Ryan Gosling) falls in love with a rich young woman (Rachel McAdams), giving her a sense of freedom, but they are soon separated because of their social differences.",
+      image: "the-notebook.jpg",
+      price: 17.99,
+    },
+    {
+      name: "The Witch",
+      categories: [categories[0]._id, categories[3]._id, categories[7]._id],
+      movieComments: [moviecomments[15]._id, moviecomments[16]._id],
+      description:
+        "A family in 1630s New England is torn apart by the forces of witchcraft, black magic, and possession.",
+      image: "the-witch.jpg",
+      price: 27.99,
+    },
+    {
+      name: "Raw",
+      categories: [categories[0]._id, categories[3]._id, categories[7]._id],
+      movieComments: [moviecomments[17]._id],
+      description:
+        "A young woman, studying to be a vet, develops a craving for human flesh.",
+      image: "raw.jpg",
+      price: 25.99,
+    },
+    {
+      name: "Never Let Me Go",
+      categories: [
+        categories[0]._id,
+        categories[4]._id,
+        categories[6]._id,
+        categories[7]._id,
+      ],
+      movieComments: [moviecomments[18]._id],
+      description:
+        "The lives of three friends, from their early school days into young adulthood, when the reality of the world they live in comes knocking.",
+      image: "never-let-me-go.jpg",
+      price: 24.99,
+    },
   ]);
 
   console.log("products seeded");
@@ -223,6 +427,14 @@ db.once("open", async () => {
     lastName: "Pups",
     username: "MirMir",
     email: "mirpups@yahoo.com",
+    password: "123456",
+  });
+
+  await User.create({
+    firstName: "Violet",
+    lastName: "Love",
+    username: "Vio",
+    email: "lovelove@yahoo.com",
     password: "123456",
   });
 
