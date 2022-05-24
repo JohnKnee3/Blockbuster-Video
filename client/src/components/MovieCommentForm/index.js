@@ -43,7 +43,7 @@ function MovieCommentForm(id) {
     };
 
     return (
-        <div className="container my-1">
+        <div className="my-1">
             <p className={`count-form ${characterCount === 280 ? 'text-error' : ''}`}>
                 Character Count: {characterCount}/280
                 {/* {error && <span className="ml-2">Something went wrong...</span>} */}

@@ -1,10 +1,11 @@
 import React, { useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { useQuery, useMutation } from "@apollo/react-hooks";
 
 import edit from '../../assets/edit.png';
 import trashcan from '../../assets/delete-img.png';
 
+import MovieCommentForm from "../../components/MovieCommentForm";
 import Auth from "../../utils/auth";
 import { QUERY_ONE_PRODUCT, QUERY_USER } from "../../utils/queries";
 import {
@@ -12,7 +13,7 @@ import {
   UPDATE_MOVIE_COMMENT,
 } from "../../utils/mutations";
 
-function MovieCommentList() {
+function MovieCommentList(id) {
   // get a productId from the URL
   const { id: productId } = useParams();
 
@@ -141,6 +142,7 @@ function MovieCommentList() {
 
     return (
       <div className="container">
+        <h3>Edit Your Comment</h3>
         <p className={`count-form ${characterCount === 280 ? "text-error" : ""}`}>
           Character Count: {characterCount}/280
         </p>
@@ -165,6 +167,21 @@ function MovieCommentList() {
       </div>
     );
   };
+
+  function showCommentForm() {
+    if (Auth.loggedIn()) {
+      return <MovieCommentForm id={id.id} />;
+    } else {
+      return (
+        <ul className="container flex-row">
+          <li className="mx-1">
+            <Link to="/login">Login</Link> or <Link to="/signup">Signup</Link>{" "}
+            to comment.
+          </li>
+        </ul>
+      );
+    }
+  }
 
   // const renderCommentEdit = (_id, movieCommentText) => {
   //     // get a comment id from the clicked comment
@@ -251,6 +268,7 @@ function MovieCommentList() {
               </div>
             </div>
           ))}
+          {showCommentForm()}
       </div>
     );
   }

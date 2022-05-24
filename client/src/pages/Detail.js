@@ -55,20 +55,20 @@ function Detail() {
     }
   }, [products, data, loading, dispatch, id]);
 
-  function showCommentForm() {
-    if (Auth.loggedIn()) {
-      return <MovieCommentForm id={id} />;
-    } else {
-      return (
-        <ul className="container flex-row">
-          <li className="mx-1">
-            <Link to="/login">Login</Link> or <Link to="/signup">Signup</Link>{" "}
-            to comment.
-          </li>
-        </ul>
-      );
-    }
-  }
+  // function showCommentForm() {
+  //   if (Auth.loggedIn()) {
+  //     return <MovieCommentForm id={id} />;
+  //   } else {
+  //     return (
+  //       <ul className="container flex-row">
+  //         <li className="mx-1">
+  //           <Link to="/login">Login</Link> or <Link to="/signup">Signup</Link>{" "}
+  //           to comment.
+  //         </li>
+  //       </ul>
+  //     );
+  //   }
+  // }
 
   const addToCart = () => {
     const itemInCart = cart.find((cartItem) => cartItem._id === id);
@@ -137,7 +137,7 @@ function Detail() {
       <Cart />
       <MovieCommentList id={id} />
       {/* <MovieCommentForm id={id} /> */}
-      {showCommentForm()}
+      {/* {showCommentForm()} */}
     </>
   );
 }
