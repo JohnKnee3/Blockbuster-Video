@@ -1,7 +1,11 @@
 import React, { useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { useQuery, useMutation } from "@apollo/react-hooks";
 
+import edit from '../../assets/edit.png';
+import trashcan from '../../assets/delete-img.png';
+
+import MovieCommentForm from "../../components/MovieCommentForm";
 import Auth from "../../utils/auth";
 import { QUERY_ONE_PRODUCT, QUERY_USER } from "../../utils/queries";
 import {
@@ -9,7 +13,7 @@ import {
   UPDATE_MOVIE_COMMENT,
 } from "../../utils/mutations";
 
-function MovieCommentList() {
+function MovieCommentList(id) {
   // get a productId from the URL
   const { id: productId } = useParams();
 
@@ -137,12 +141,14 @@ function MovieCommentList() {
     console.log("I am commentTextState in the function", commentTextState);
 
     return (
-      <div>
-        <p className={`m-0 ${characterCount === 280 ? "text-error" : ""}`}>
+      <div className="container">
+        <h3>Edit Your Comment</h3>
+        <p className={`count-form ${characterCount === 280 ? "text-error" : ""}`}>
           Character Count: {characterCount}/280
         </p>
         <form>
           <textarea
+            className="form-input"
             required
             name="updatedCommentText"
             // placeholder={commentTextState}
@@ -162,6 +168,21 @@ function MovieCommentList() {
     );
   };
 
+  function showCommentForm() {
+    if (Auth.loggedIn()) {
+      return <MovieCommentForm id={id.id} />;
+    } else {
+      return (
+        <ul className="container flex-row">
+          <li className="mx-1">
+            <Link to="/login">Login</Link> or <Link to="/signup">Signup</Link>{" "}
+            to comment.
+          </li>
+        </ul>
+      );
+    }
+  }
+
   // const renderCommentEdit = (_id, movieCommentText) => {
   //     // get a comment id from the clicked comment
   //     const commentId = _id;
@@ -180,69 +201,74 @@ function MovieCommentList() {
   // };
 
   if (!comments.length) {
-    return <h3>No Comments Yet</h3>;
+    return <h3 className="container">No Comments Yet</h3>;
   }
 
   if (editState) {
     return <div>{renderEditForm()}</div>;
   } else {
     return (
-      <div>
+      <div className="container my-1">
         {comments &&
           comments.map((comment) => (
             // console.log("I am comments", comments),
             // console.log("I am cooments.username", comments.username),
 
             <div key={comment._id} className="card mb-3">
-              <div key={comment._id}>
-                {/* { editState ? 
-                (renderEditForm(comments._id, comments.movieCommentText))
-                : (
-                <> */}
-                <p> {comment.movieCommentText}</p>
-                <p>
-                  {" "}
-                  {comment.username},{comment.createdAt}
+              <div key={comment._id} className="comment-list">
+                <p className="comment-username">{comment.username}</p>
+                <p className="comment-time">
+                  {comment.createdAt}
+                  {username === comment.username && (
+                  <>
+                    <button
+                      className="edit-icons"
+                      onClick={() => {
+                        setCommentIdState(comment._id);
+                        setCommentTextState(comment.movieCommentText);
+                        // currentComment(comment._id, comment.movieCommentText);
+                        setEditState(true);
+                      }}
+                    >
+                      <img src={edit} alt="edit"/>
+                    </button>
+                    <button 
+                      onClick={() => handleDeleteComment(comment._id)}
+                      className="delete-icons"
+                    >
+                      <img src={trashcan} alt="delete"/>
+                    </button>
+                  </>
+                  )}
+                  {username === "Admin" && (
+                    <>
+                      <button 
+                        className="edit-icons"
+                        onClick={() => {
+                          setCommentIdState(comment._id);
+                          setCommentTextState(comment.movieCommentText);
+                          // currentComment(comment._id, comment.movieCommentText);
+                          setEditState(true);
+                        }}
+                      >
+                        <img src={edit} alt="edit"/>
+                      </button>
+                      <button 
+                        className="delete-icons"
+                        onClick={() => handleDeleteComment(comment._id)}
+                      >
+                        <img src={trashcan} alt="delete"/>
+                      </button>
+                    </>
+                  )}
                 </p>
-                {username === comment.username && (
-                  <>
-                    <button
-                      onClick={() => {
-                        setCommentIdState(comment._id);
-                        setCommentTextState(comment.movieCommentText);
-                        // currentComment(comment._id, comment.movieCommentText);
-                        setEditState(true);
-                      }}
-                    >
-                      Edit
-                    </button>
-                    <button onClick={() => handleDeleteComment(comment._id)}>
-                      Delete
-                    </button>
-                  </>
-                )}
-                {username === "Admin" && (
-                  <>
-                    <button
-                      onClick={() => {
-                        setCommentIdState(comment._id);
-                        setCommentTextState(comment.movieCommentText);
-                        // currentComment(comment._id, comment.movieCommentText);
-                        setEditState(true);
-                      }}
-                    >
-                      Edit
-                    </button>
-                    <button onClick={() => handleDeleteComment(comment._id)}>
-                      Delete
-                    </button>
-                  </>
-                )}
-                {/* </>             
-                )} */}
+                <p className="comment-text">{comment.movieCommentText}</p>
+
+                
               </div>
             </div>
           ))}
+          {showCommentForm()}
       </div>
     );
   }

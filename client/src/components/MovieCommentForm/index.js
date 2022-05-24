@@ -43,22 +43,19 @@ function MovieCommentForm(id) {
     };
 
     return (
-        <div>
-            <p className={`m-0 ${characterCount === 280 ? 'text-error' : ''}`}>
+        <div className="my-1">
+            <p className={`count-form ${characterCount === 280 ? 'text-error' : ''}`}>
                 Character Count: {characterCount}/280
                 {/* {error && <span className="ml-2">Something went wrong...</span>} */}
             </p>
-            <form 
-                className="flex-row justify-center justify-space-between-md align-stretch"
-                >
+            <form>
                 <textarea
                 placeholder="Add a new comment"
-                className="form-input col-12 col-md-9"
+                className="form-input"
                 name="movieCommentText"
                 onChange={handleChange}
                 ></textarea>
                 <button 
-                className="btn col-12 col-md-3" 
                 type="submit"
                 onClick={handleFormSubmit}
                 >
