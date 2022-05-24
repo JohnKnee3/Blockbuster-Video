@@ -60,7 +60,7 @@ function Detail() {
       return <MovieCommentForm id={id} />;
     } else {
       return (
-        <ul className="flex-row">
+        <ul className="container flex-row">
           <li className="mx-1">
             <Link to="/login">Login</Link> or <Link to="/signup">Signup</Link>{" "}
             to comment.

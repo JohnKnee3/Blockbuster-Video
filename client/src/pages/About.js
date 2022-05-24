@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const About = () => {
   return (
     <div className="container need-less-space">
-      <h2 className="text-center">WE ARE BACK!!!!!!</h2>
+      <h2 className="text-center about-h2">WE ARE BACK!!!!!!</h2>
 
       <img
         className="logo-center"
@@ -12,14 +12,14 @@ const About = () => {
         src={`/logo512.png`}
       />
 
-      <p className="text-center">
+      <p className="text-center about-p">
         I know you missed us and are like man where have you been? Well let us
         tell you...
       </p>
 
       <div className="row">
         <div className="col text-center">
-          <p className="text-left">When we went under we got really sad.</p>
+          <p className="text-left about-p">When we went under we got really sad.</p>
         </div>
         <div className="col">
           <img
@@ -38,12 +38,12 @@ const About = () => {
           />
         </div>
         <div className="col text-center">
-          <p className="text-right">We did some soul searching.</p>
+          <p className="text-right about-p">We did some soul searching.</p>
         </div>
       </div>
       <div className="row">
         <div className="col text-center">
-          <p className="text-left">We read a book.</p>
+          <p className="text-left about-p">We read a book.</p>
         </div>
         <div className="col">
           <img
@@ -62,14 +62,14 @@ const About = () => {
           />
         </div>
         <div className="col text-center">
-          <p className="text-right">We went to serveral farmers markets.</p>
+          <p className="text-right about-p">We went to serveral farmers markets.</p>
         </div>
       </div>
       <div className="need-space">
-        <h2 className="text-center">And Finally</h2>
+        <h2 className="text-center about-h2">And Finally</h2>
       </div>
       <div className="need-space">
-        <h2 className="text-center">An Idea!!!!</h2>
+        <h2 className="text-center about-h2">An Idea!!!!</h2>
         <img
           className="logo-center"
           alt="Man with an idea"
@@ -79,7 +79,7 @@ const About = () => {
       <div className="need-space"></div>
       <div className="row">
         <div className="col text-center">
-          <p className="text-left">People like hip things.</p>
+          <p className="text-left about-p">People like hip things.</p>
         </div>
         <div className="col">
           <img
@@ -98,14 +98,14 @@ const About = () => {
           />
         </div>
         <div className="col text-center">
-          <p className="text-right">We can be hip!!</p>
+          <p className="text-right about-p">We can be hip!!</p>
         </div>
       </div>
       <div className="need-space">
-        <h2 className="text-center">We Are Proudly Introducing...</h2>
+        <h2 className="text-center about-h2">We Are Proudly Introducing...</h2>
       </div>
       <div className="need-space">
-        <h2 className="text-center">Blockbuster VHS...</h2>
+        <h2 className="text-center about-h2">Blockbuster VHS...</h2>
         <img
           className="logo-center"
           alt="Blockbuster VHS Case"
@@ -113,12 +113,12 @@ const About = () => {
         />
       </div>
       <div className="need-space">
-        <h2 className="text-center">On Demand!!!</h2>
+        <h2 className="text-center about-h2">On Demand!!!</h2>
       </div>
       <div className="need-space"></div>
       <div className="row">
         <div className="col text-center">
-          <p className="text-left">
+          <p className="text-left about-p">
             Place an order and in 5-7 weeks your VHS will be ready.
           </p>
         </div>
@@ -139,7 +139,7 @@ const About = () => {
           />
         </div>
         <div className="col text-center">
-          <p className="text-right">
+          <p className="text-right about-p">
             Go to where your Blockbuster used to be.
             {/* <br />Don't worry about how we know where you live. */}
           </p>
@@ -147,7 +147,7 @@ const About = () => {
       </div>
       <div className="row">
         <div className="col text-center">
-          <p className="text-left">Approach an unmarked white van.</p>
+          <p className="text-left about-p">Approach an unmarked white van.</p>
         </div>
         <div className="col">
           <img
@@ -166,12 +166,12 @@ const About = () => {
           />
         </div>
         <div className="col text-center">
-          <p className="text-right">Take your Blockbuster VHS home.</p>
+          <p className="text-right about-p">Take your Blockbuster VHS home.</p>
         </div>
       </div>
       <div className="row">
         <div className="col text-center">
-          <p className="text-left">And enjoy.</p>
+          <p className="text-left about-p">And enjoy.</p>
         </div>
         <div className="col">
           <img
@@ -181,7 +181,7 @@ const About = () => {
           />
         </div>
       </div>
-      <div className="need-lil-less-space text-center">
+      <div className="need-lil-less-space text-center about-h2">
         <Link to="/">Now lets get shopping!!</Link>
       </div>
       <div className="need-lil-less-space"></div>

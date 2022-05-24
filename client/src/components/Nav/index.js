@@ -7,8 +7,8 @@ function Nav() {
   function showNavigation() {
     if (Auth.loggedIn()) {
       return (
-        <ul className="flex-row">
-          <li className="mx-1">
+        <ul className="nav-list flex-row">
+          <li className=" mx-1">
             <Link to="/orderHistory">Order History</Link>
           </li>
           <li className="mx-1">
@@ -24,7 +24,7 @@ function Nav() {
       );
     } else {
       return (
-        <ul className="flex-row">
+        <ul className="flex-row nav-list">
           <li className="mx-1">
             <Link to="/signup">Signup</Link>
           </li>

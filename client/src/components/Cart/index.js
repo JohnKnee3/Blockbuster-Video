@@ -93,10 +93,10 @@ const Cart = () => {
                 </div>
             ) : (
                 <h3>
-                <span role="img" aria-label="shocked">
+                {/* <span role="img" aria-label="shocked">
                     😱
-                </span>
-                You haven't added anything to your cart yet!
+                </span> */}
+                Empty Cart
                 </h3>
             )}
         </div>
