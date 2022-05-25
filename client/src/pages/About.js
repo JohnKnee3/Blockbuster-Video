@@ -17,9 +17,11 @@ const About = () => {
         tell you...
       </p>
 
-      <div className="row">
+      <div className="row text-was-row">
         <div className="col text-center">
-          <p className="text-left about-p">When we went under we got really sad.</p>
+          <p className="text-left about-p text-was-top">
+            When we went under we got really sad.
+          </p>
         </div>
         <div className="col">
           <img
@@ -41,9 +43,9 @@ const About = () => {
           <p className="text-right about-p">We did some soul searching.</p>
         </div>
       </div>
-      <div className="row">
+      <div className="row text-was-row">
         <div className="col text-center">
-          <p className="text-left about-p">We read a book.</p>
+          <p className="text-left about-p text-was-top">We read a book.</p>
         </div>
         <div className="col">
           <img
@@ -62,7 +64,9 @@ const About = () => {
           />
         </div>
         <div className="col text-center">
-          <p className="text-right about-p">We went to serveral farmers markets.</p>
+          <p className="text-right about-p">
+            We went to serveral farmers markets.
+          </p>
         </div>
       </div>
       <div className="need-space">
@@ -77,9 +81,11 @@ const About = () => {
         />
       </div>
       <div className="need-space"></div>
-      <div className="row">
+      <div className="row text-was-row">
         <div className="col text-center">
-          <p className="text-left about-p">People like hip things.</p>
+          <p className="text-left about-p text-was-top">
+            People like hip things.
+          </p>
         </div>
         <div className="col">
           <img
@@ -116,9 +122,9 @@ const About = () => {
         <h2 className="text-center about-h2">On Demand!!!</h2>
       </div>
       <div className="need-space"></div>
-      <div className="row">
+      <div className="row text-was-row">
         <div className="col text-center">
-          <p className="text-left about-p">
+          <p className="text-left about-p text-was-top">
             Place an order and in 5-7 weeks your VHS will be ready.
           </p>
         </div>
@@ -145,8 +151,8 @@ const About = () => {
           </p>
         </div>
       </div>
-      <div className="row">
-        <div className="col text-center">
+      <div className="row text-was-row">
+        <div className="col text-center text-was-top">
           <p className="text-left about-p">Approach an unmarked white van.</p>
         </div>
         <div className="col">
@@ -169,9 +175,9 @@ const About = () => {
           <p className="text-right about-p">Take your Blockbuster VHS home.</p>
         </div>
       </div>
-      <div className="row">
-        <div className="col text-center">
-          <p className="text-left about-p">And enjoy.</p>
+      <div className="row text-was-row">
+        <div className="col text-center ">
+          <p className="text-left about-p text-was-top">And enjoy.</p>
         </div>
         <div className="col">
           <img
