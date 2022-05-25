@@ -40,10 +40,10 @@ function OrderHistory() {
                     <div key={index} className="card px-1 py-1">
                       <Link to={`/products/${_id}`}>
                         <img alt={name} src={`/images/${image}`} />
-                        <p>{name}</p>
+                        <p className="movie-title">{name}</p>
                       </Link>
                       <div>
-                        <span>${price}</span>
+                        <span className="movie-price">${price}</span>
                       </div>
                     </div>
                   ))}
