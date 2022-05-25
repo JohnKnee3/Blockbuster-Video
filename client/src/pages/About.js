@@ -13,7 +13,7 @@ const About = () => {
       />
 
       <p className="text-center about-p">
-        I know you missed us and are like man where have you been? Well let us
+        We know you missed us and are like man where have you been? Well let us
         tell you...
       </p>
 
