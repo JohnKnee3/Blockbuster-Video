@@ -60,6 +60,7 @@ export const QUERY_CATEGORIES = gql`
       _id
       name
       title
+      helpingVerb
     }
   }
 `;

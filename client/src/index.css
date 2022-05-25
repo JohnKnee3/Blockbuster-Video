@@ -394,7 +394,7 @@ input:focus {
   }
 
   .card {
-    width: 100%;
+    width: 94%;
   }
 
   .category-btn {
@@ -414,6 +414,10 @@ input:focus {
   .text-was-row {
     margin-top: 7rem;
   }
+
+  .category-description {
+    font-size: 1.6rem;
+  }
 }
 
 @media screen and (min-width: 375px) and (max-width: 424px) {
@@ -429,7 +433,7 @@ input:focus {
   }
 
   .card {
-    width: 100%;
+    width: 94%;
   }
 
   .category-btn {
@@ -453,6 +457,9 @@ input:focus {
   }
   .text-was-row {
     margin-top: 7rem;
+  }
+  .category-description {
+    font-size: 1.6rem;
   }
 }
 
@@ -473,7 +480,7 @@ input:focus {
   }
 
   .card {
-    width: 100%;
+    width: 94%;
   }
 
   .category-btn {
@@ -493,9 +500,21 @@ input:focus {
   .text-was-row {
     margin-top: 7rem;
   }
+  .category-description {
+    font-size: 1.6rem;
+  }
 }
 
 @media screen and (min-width: 480px) and (max-width: 767px) {
+  .logo-name {
+    /* font-size: 3rem;
+    text-align: center; */
+    display: none;
+    /* margin: 0; */
+  }
+  .logo-image {
+    margin-top: 4px;
+  }
   form {
     width: 80%;
   }

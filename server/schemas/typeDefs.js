@@ -5,6 +5,7 @@ const typeDefs = gql`
     _id: ID
     name: String
     title: String
+    helpingVerb: String
   }
 
   type Product {
