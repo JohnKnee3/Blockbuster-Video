@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { useQuery, useMutation } from "@apollo/react-hooks";
 
-import edit from '../../assets/edit.png';
-import trashcan from '../../assets/delete-img.png';
+import edit from "../../assets/edit.png";
+import trashcan from "../../assets/delete-img.png";
 
 import MovieCommentForm from "../../components/MovieCommentForm";
 import Auth from "../../utils/auth";
@@ -143,7 +143,9 @@ function MovieCommentList(id) {
     return (
       <div className="container">
         <h3>Edit Your Comment</h3>
-        <p className={`count-form ${characterCount === 280 ? "text-error" : ""}`}>
+        <p
+          className={`count-form ${characterCount === 280 ? "text-error" : ""}`}
+        >
           Character Count: {characterCount}/280
         </p>
         <form>
@@ -201,12 +203,12 @@ function MovieCommentList(id) {
   // };
 
   if (!comments.length) {
-    return  (
+    return (
       <div className="container">
-        <h3 >No Comments Yet</h3>
+        <h3>No Comments Yet</h3>
         {showCommentForm()}
       </div>
-    )
+    );
   }
 
   if (editState) {
@@ -219,35 +221,14 @@ function MovieCommentList(id) {
             // console.log("I am comments", comments),
             // console.log("I am cooments.username", comments.username),
 
-            <div key={comment._id} className="card mb-3">
+            <div key={comment._id} className="comment-color mb-3">
               <div key={comment._id} className="comment-list">
                 <p className="comment-username">{comment.username}</p>
                 <p className="comment-time">
                   {comment.createdAt}
                   {username === comment.username && (
-                  <>
-                    <button
-                      className="edit-icons"
-                      onClick={() => {
-                        setCommentIdState(comment._id);
-                        setCommentTextState(comment.movieCommentText);
-                        // currentComment(comment._id, comment.movieCommentText);
-                        setEditState(true);
-                      }}
-                    >
-                      <img src={edit} alt="edit"/>
-                    </button>
-                    <button 
-                      onClick={() => handleDeleteComment(comment._id)}
-                      className="delete-icons"
-                    >
-                      <img src={trashcan} alt="delete"/>
-                    </button>
-                  </>
-                  )}
-                  {username === "Admin" && (
                     <>
-                      <button 
+                      <button
                         className="edit-icons"
                         onClick={() => {
                           setCommentIdState(comment._id);
@@ -256,24 +237,43 @@ function MovieCommentList(id) {
                           setEditState(true);
                         }}
                       >
-                        <img src={edit} alt="edit"/>
+                        <img src={edit} alt="edit" />
                       </button>
-                      <button 
+                      <button
+                        onClick={() => handleDeleteComment(comment._id)}
+                        className="delete-icons"
+                      >
+                        <img src={trashcan} alt="delete" />
+                      </button>
+                    </>
+                  )}
+                  {username === "Admin" && (
+                    <>
+                      <button
+                        className="edit-icons"
+                        onClick={() => {
+                          setCommentIdState(comment._id);
+                          setCommentTextState(comment.movieCommentText);
+                          // currentComment(comment._id, comment.movieCommentText);
+                          setEditState(true);
+                        }}
+                      >
+                        <img src={edit} alt="edit" />
+                      </button>
+                      <button
                         className="delete-icons"
                         onClick={() => handleDeleteComment(comment._id)}
                       >
-                        <img src={trashcan} alt="delete"/>
+                        <img src={trashcan} alt="delete" />
                       </button>
                     </>
                   )}
                 </p>
                 <p className="comment-text">{comment.movieCommentText}</p>
-
-                
               </div>
             </div>
           ))}
-          {showCommentForm()}
+        {showCommentForm()}
       </div>
     );
   }
