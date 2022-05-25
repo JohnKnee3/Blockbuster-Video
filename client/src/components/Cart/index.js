@@ -4,6 +4,7 @@ import Auth from "../../utils/auth";
 import "./style.css";
 
 import cart1 from "../../assets/cart.png";
+import { Link } from "react-router-dom";
 import { useStoreContext } from "../../utils/GlobalState";
 import { TOGGLE_CART, ADD_MULTIPLE_TO_CART } from "../../utils/actions";
 import { idbPromise } from "../../utils/helpers";
@@ -89,7 +90,9 @@ const Cart = () => {
             {Auth.loggedIn() ? (
               <button onClick={submitCheckout}>Checkout</button>
             ) : (
-              <span>(log in to check out)</span>
+              <span>
+                (<Link to="/login">log in</Link> to check out)
+              </span>
             )}
           </div>
         </div>

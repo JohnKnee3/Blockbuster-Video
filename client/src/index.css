@@ -403,6 +403,10 @@ input:focus {
     position: relative;
     bottom: -303px;
   }
+  .text-was-top-three {
+    position: relative;
+    bottom: -339px;
+  }
   .text-was-row {
     margin-top: 7rem;
   }
@@ -437,6 +441,11 @@ input:focus {
   .text-was-top {
     position: relative;
     bottom: -303px;
+  }
+
+  .text-was-top-three {
+    position: relative;
+    bottom: -339px;
   }
   .text-was-row {
     margin-top: 7rem;
