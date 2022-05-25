@@ -3,7 +3,7 @@
 
 ## Deployed Page
 
-<h3><a href= "">Blockbuster Video Page</a></h3>
+<h3><a href= "https://tranquil-caverns-31701.herokuapp.com/">Blockbuster Video Page</a></h3>
 
 ## Table of Contents
 
@@ -26,13 +26,13 @@ This is our final project for the UofU Web Development Boot Camp. Here we have c
 - Node.js
 - JWT Authentication
 - Create-React-App service worker
-- JavaScript ES5 and ES6
+- JavaScript
 - Heroku
 - Git
 
 ## Usage
 
-Blockbuster Video is back!!! Well not really... But here we made a silly little site of what it would look like if they decided to come back and get into making designer VHS videos. Our goal was to make a engaging and functional store so customers can purchase movies and allow them to also comment on all of their movies. Click on the link in the "Deployed Page" section above to view the site in action. While there you can checkout by using the stripe test credit card number `4242 4242 4242 4242`
+Blockbuster Video is back!!! Well not really... But here we made a silly little site of what it would look like if they decided to come back and get into making designer VHS videos. Our goal was to make a engaging and functional store so customers can purchase movies. Also we gave customers the ability to comment on all of the movies in the store. Click on the link in the "Deployed Page" section above to view the site in action. While there you can checkout using the stripe test credit card number `4242 4242 4242 4242`
 
 ## Screenshots
 
