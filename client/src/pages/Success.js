@@ -33,7 +33,7 @@ function Success() {
       <Jumbotron>
         <h1>Success!</h1>
         <h2>Thank you for your purchase!</h2>
-        <h2>You we'll se you in 5-7 weeks.</h2>
+        <h2>We'll see you in 5-7 weeks.</h2>
       </Jumbotron>
     </div>
   );

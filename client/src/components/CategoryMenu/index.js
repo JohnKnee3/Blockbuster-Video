@@ -45,7 +45,7 @@ function CategoryMenu() {
 
   return (
     <div>
-      <h2>Choose a Category:</h2>
+      <h2>Choose a category:</h2>
       {categories.map((item) => (
         // console.log("I am item", item),
         <button

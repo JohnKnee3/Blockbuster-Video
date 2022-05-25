@@ -359,6 +359,10 @@ input:focus {
   font-family: sans-serif;
 }
 
+.orange {
+  color: var(--tertiary);
+}
+
 /* MEDIA QUERY FOR MOBILE PHONES AND SMALLER */
 @media screen and (min-width: 320px) and (max-width: 374px) {
   .logo-name {
@@ -403,6 +407,10 @@ input:focus {
     position: relative;
     bottom: -303px;
   }
+  .text-was-top-three {
+    position: relative;
+    bottom: -339px;
+  }
   .text-was-row {
     margin-top: 7rem;
   }
@@ -437,6 +445,11 @@ input:focus {
   .text-was-top {
     position: relative;
     bottom: -303px;
+  }
+
+  .text-was-top-three {
+    position: relative;
+    bottom: -339px;
   }
   .text-was-row {
     margin-top: 7rem;

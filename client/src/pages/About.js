@@ -124,7 +124,7 @@ const About = () => {
       <div className="need-space"></div>
       <div className="row text-was-row">
         <div className="col text-center">
-          <p className="text-left about-p text-was-top">
+          <p className="text-left about-p text-was-top-three">
             Place an order and in 5-7 weeks your VHS will be ready.
           </p>
         </div>

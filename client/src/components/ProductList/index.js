@@ -63,7 +63,10 @@ function ProductList() {
 
   return (
     <div className="my-2">
-      <h2>Simply the best {currentCategory.title}</h2>
+      <h2>
+        <span className="orange">{currentCategory.title}</span> Better in VHS{" "}
+      </h2>
+
       {state.products.length ? (
         <div className="flex-row">
           {filterProducts().map((product) => (
