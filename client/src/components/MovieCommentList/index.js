@@ -201,7 +201,12 @@ function MovieCommentList(id) {
   // };
 
   if (!comments.length) {
-    return <h3 className="container">No Comments Yet</h3>;
+    return  (
+      <div className="container">
+        <h3 >No Comments Yet</h3>
+        {showCommentForm()}
+      </div>
+    )
   }
 
   if (editState) {
