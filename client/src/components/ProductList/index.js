@@ -71,7 +71,7 @@ function ProductList() {
         ) : (
           <span className="orange ">{currentCategory.title}</span>
         )}{" "}
-        {currentCategory.helpingVerb} Better in VHS{" "}
+        {currentCategory.helpingVerb} Better on VHS{" "}
       </h2>
 
       {state.products.length ? (

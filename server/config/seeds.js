@@ -11,7 +11,7 @@ db.once("open", async () => {
     { name: "Horror", title: "Horror Films", helpingVerb: "are" },
     { name: "Sci-Fi", title: "Sci-Fi Movies", helpingVerb: "are" },
     { name: "Family", title: "Family Films", helpingVerb: "are" },
-    { name: "Romance", title: "Romantic Movies", helpingVerb: "are" },
+    { name: "Romance", title: "Romance", helpingVerb: "is" },
     { name: "All", title: "Everything ", helpingVerb: "is" },
   ]);
 
