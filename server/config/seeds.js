@@ -5,14 +5,14 @@ db.once("open", async () => {
   await Category.deleteMany();
 
   const categories = await Category.insertMany([
-    { name: "Drama", title: "Dramas" },
-    { name: "Action", title: "Action Movies" },
-    { name: "Comedy", title: "Comedies" },
-    { name: "Horror", title: "Horror Films" },
-    { name: "Sci-Fi", title: "Sci-Fi Movies" },
-    { name: "Family", title: "Family Films" },
-    { name: "Romance", title: "Romantic Movies" },
-    { name: "All", title: " " },
+    { name: "Drama", title: "Dramas are" },
+    { name: "Action", title: "Action Movies are" },
+    { name: "Comedy", title: "Comedies are" },
+    { name: "Horror", title: "Horror Films are" },
+    { name: "Sci-Fi", title: "Sci-Fi Movies are" },
+    { name: "Family", title: "Family Films are" },
+    { name: "Romance", title: "Romantic Movies are" },
+    { name: "All", title: "Everything is " },
   ]);
 
   console.log("categories seeded");

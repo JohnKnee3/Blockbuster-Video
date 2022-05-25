@@ -38,21 +38,21 @@ Blockbuster Video is back!!! Well not really... But here we made a silly little 
 
 ### Blockbuster Video About Page
 
-<img src= "" alt="image of about page" >
+<img src= "./client/public/images/about-page.jpg" alt="image of about page" >
 
 ### Blockbuster Video Store Page
 
-<img src= "" alt="image of main store page" >
+<img src= "./client/public/images/store-page.jpg" alt="image of main store page" >
 
-<img src= "" alt="image of one item store page" >
+<img src= "./client/public/images/store-one-movie.jpg" alt="image of one item store page" >
 
 ### Blockbuster Video Checkout Page
 
-<img src= "" alt= "image of checkout page">
+<img src= "./client/public/images/checkout-page.jpg" alt= "image of checkout page">
 
 ### Blockbuster Video Order History Page
 
-<img src= "" alt= "image of the order history page">
+<img src= "./client/public/images/order-history.jpg" alt= "image of the order history page">
 
 ### Contact
 
