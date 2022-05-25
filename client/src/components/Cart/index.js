@@ -3,7 +3,7 @@ import CartItem from "../CartItem";
 import Auth from "../../utils/auth";
 import "./style.css";
 
-import cart from "../../assets/cart.png";
+import cart1 from "../../assets/cart.png";
 import { useStoreContext } from "../../utils/GlobalState";
 import { TOGGLE_CART, ADD_MULTIPLE_TO_CART } from "../../utils/actions";
 import { idbPromise } from "../../utils/helpers";
@@ -45,7 +45,7 @@ const Cart = () => {
     return (
       <div className="cart-closed" onClick={toggleCart}>
         <span role="img" aria-label="cart">
-          <img src={cart} />
+          <img src={cart1} />
         </span>
       </div>
     );
