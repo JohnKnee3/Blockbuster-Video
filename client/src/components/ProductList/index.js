@@ -63,8 +63,15 @@ function ProductList() {
 
   return (
     <div className="my-2">
-      <h2>
-        <span className="orange">{currentCategory.title}</span> Better in VHS{" "}
+      <h2 className="category-description">
+        {!currentCategory ? (
+          <>
+            <span className="orange ">Everything</span> <span>is</span>
+          </>
+        ) : (
+          <span className="orange ">{currentCategory.title}</span>
+        )}{" "}
+        {currentCategory.helpingVerb} Better in VHS{" "}
       </h2>
 
       {state.products.length ? (

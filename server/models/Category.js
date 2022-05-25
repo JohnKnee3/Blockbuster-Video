@@ -13,6 +13,11 @@ const categorySchema = new Schema({
     // required: true,
     trim: true,
   },
+  helpingVerb: {
+    type: String,
+    // required: true,
+    trim: true,
+  },
 });
 
 const Category = mongoose.model("Category", categorySchema);
