@@ -5,14 +5,39 @@ db.once("open", async () => {
   await Category.deleteMany();
 
   const categories = await Category.insertMany([
-    { name: "Drama", title: "Dramas", helpingVerb: "are" },
-    { name: "Action", title: "Action Movies", helpingVerb: "are" },
-    { name: "Comedy", title: "Comedies", helpingVerb: "are" },
-    { name: "Horror", title: "Horror Films", helpingVerb: "are" },
-    { name: "Sci-Fi", title: "Sci-Fi Movies", helpingVerb: "are" },
-    { name: "Family", title: "Family Films", helpingVerb: "are" },
-    { name: "Romance", title: "Romance", helpingVerb: "is" },
-    { name: "All", title: "Everything ", helpingVerb: "is" },
+    { name: "Drama", title: "Dramas", helpingVerb: "are", orderControl: "a" },
+    {
+      name: "Action",
+      title: "Action Movies",
+      helpingVerb: "are",
+      orderControl: "b",
+    },
+    {
+      name: "Comedy",
+      title: "Comedies",
+      helpingVerb: "are",
+      orderControl: "c",
+    },
+    {
+      name: "Horror",
+      title: "Horror Films",
+      helpingVerb: "are",
+      orderControl: "d",
+    },
+    {
+      name: "Sci-Fi",
+      title: "Sci-Fi Movies",
+      helpingVerb: "are",
+      orderControl: "e",
+    },
+    {
+      name: "Family",
+      title: "Family Films",
+      helpingVerb: "are",
+      orderControl: "f",
+    },
+    { name: "Romance", title: "Romance", helpingVerb: "is", orderControl: "g" },
+    { name: "All", title: "Everything ", helpingVerb: "is", orderControl: "h" },
   ]);
 
   console.log("categories seeded");

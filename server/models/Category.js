@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const dateFormat = require("../utils/dateFormat");
 
 const { Schema } = mongoose;
 
@@ -14,6 +15,11 @@ const categorySchema = new Schema({
     trim: true,
   },
   helpingVerb: {
+    type: String,
+    // required: true,
+    trim: true,
+  },
+  orderControl: {
     type: String,
     // required: true,
     trim: true,

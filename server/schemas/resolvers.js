@@ -9,7 +9,7 @@ const resolvers = {
       return User.find().select("-__v -password");
     },
     categories: async () => {
-      return await Category.find();
+      return await Category.find().sort({ orderControl: +1 });
     },
     products: async (parent, { categories, name }) => {
       const params = {};
