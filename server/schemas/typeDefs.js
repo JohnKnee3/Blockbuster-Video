@@ -6,6 +6,7 @@ const typeDefs = gql`
     name: String
     title: String
     helpingVerb: String
+    orderControl: String
   }
 
   type Product {
