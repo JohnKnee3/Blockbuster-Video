@@ -25,6 +25,7 @@ const resolvers = {
       }
 
       return await Product.find(params)
+        .sort({ name: +1 })
         .populate("categories")
         .populate("movieComments");
     },
